@@ -26,5 +26,10 @@
   "devDependencies": {
     "qs": "^6.5.2",
     "react-hot-loader": "^4.0.0"
+  },
+  "proxy": {
+    "/": {
+      "target": "http://localhost:8080"
+    }
   }
 }

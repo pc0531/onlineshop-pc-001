@@ -3,7 +3,12 @@ import { Switch, Redirect, Route } from "react-router-dom"
 import Header from '../header'
 import Footer from '../footer'
 import Home from '../home'
-
+import Goods from '../goods'
+import Search from "../search";
+import ShoppingCard from '../shoppingCard'
+import SignIn from '../signin'
+import SignUp from '../signup'
+import Profile from '../profile'
 
 export default class Layout extends Component {
     render() {
@@ -13,10 +18,13 @@ export default class Layout extends Component {
                 <Redirect exact from="/" to="/home" />
 
                 <Route path="/home" component={Home} />
-                {/* <Route path="/signin" component={SignIn} />
+                <Route path="/goods" component={Goods} />
+                <Route path="/search" component={Search} />
+                <Route path="/shoppingCard" component={ShoppingCard} />
+                <Route path="/signin" component={SignIn} />
                 <Route path="/signup" component={SignUp} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/course" component={Course} />
+                {/* <Route path="/course" component={Course} />
                 <Route path="/class" component={Class} />
                 <Route path="/order" component={Order} /> */}
             </Switch>,

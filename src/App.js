@@ -35,6 +35,6 @@ class App extends Component {
   }
 }
 
-App = connect(state => state.appConfig)(App)
+App = connect(state => state)(App)
 
 export default hot(module)(App)

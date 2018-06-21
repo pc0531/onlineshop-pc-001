@@ -20,6 +20,10 @@
   font-size: 14px;
 }
 
+.container{
+  box-shadow: 0 2px 8px 0 rgba(7,17,27,.06);
+}
+
 .container > ul{
   float: right;
   list-style: none;
@@ -31,9 +35,9 @@
 }
 
 .container > a{
-  height: 80px;
+  height: 95px;
   display: inline-block;
-  line-height: 80px;
+  /* line-height: 80px; */
   padding: 0 30px;
   cursor: pointer;
   text-decoration: none;
@@ -41,9 +45,9 @@
 }
 
 .container >  ul > li > a{
-  height: 80px;
+  height: 100px;
   display: inline-block;
-  line-height: 80px;
+  line-height: 100px;
   padding: 0 30px;
   cursor: pointer;
   text-decoration: none;
@@ -51,7 +55,26 @@
 }
 
 .container  >  ul > li > a:hover{
-  color: #38BCA4
+  color: #a1bc22
+}
+
+.search{
+  position: absolute;
+  top: 65px;
+  left: 310px;
+}
+
+.search > input{
+  width: 350px;
+  height: 50px;
+  padding-left: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+
+.search span{
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 /*         component/footer/       */
@@ -830,7 +853,7 @@ margin-top: 8px;
 
 .course-card-top{
   width: 216px;
-  height: 120px;
+  height: 216px;
   position: relative;
   border-radius: 8px;
   transition: all .3s;
@@ -850,8 +873,8 @@ margin-top: 8px;
 }
 
 .course-card-content > h3{
-  font-size: 16px;
-    color: #07111B;
+  font-size: 20px;
+    color: red;
     line-height: 24px;
     word-wrap: break-word;
     overflow: hidden;
@@ -885,10 +908,10 @@ margin-top: 8px;
   margin-top: 2px;
 }
 
-.course-card-info > span{
+.course-card-info > p{
   display: inline-block;
   margin-right: 12px;
-  font-size: 12px;
+  font-size: 20px;
   color: #93999F;
   line-height: 24px;
   font-weight: 400;
@@ -1272,9 +1295,7 @@ float: left;
 
 }
 
-.payPasswordInput{
-  width: 100px;
-}
+
 
 
 /*         component/signup  */
@@ -1292,6 +1313,13 @@ float: left;
 
 .signup-header{
   text-align: center;
+}
+
+.signup-code{
+  position: absolute;
+  top: 32px;
+  left: 300px;
+  z-index: 999;
 }
 
 .signup-content{
@@ -1323,6 +1351,7 @@ float: left;
 .signup-content-inner{
   width: 400px;
   margin: 0 auto;
+  position: relative;
 }
 
 .signup-content-inner .usernameInput{
@@ -1362,4 +1391,268 @@ float: left;
   width: 100%;
   margin-bottom: 24px;
   padding-left: 110px;
+}
+
+
+/** goods 页面**/
+.goods{
+  position: relative;
+  overflow: hidden;
+}
+
+.goods-detail{
+  margin: 30px auto 0;
+  width: 1140px;
+  position: relative;
+}
+
+.goods-detail-content{
+  border: 1px solid #E8E8E8;
+  margin-bottom: 20px;
+}
+
+.goods-detail-show{
+  width: 100%;
+}
+.goods-info-img{
+  position: relative;
+  width: 400px;
+  /* float: left; */
+  padding: 20px 0 20px 20px;
+  height: 400px;
+  margin: 0;
+  display: inline-block;
+}
+.goods-info-img img{
+  width: 100%;
+  height: 100%;
+}
+
+.goods-info{
+  float: right;
+  width: 730px;
+  padding-top: 20px;
+}
+
+.goods-price{
+  line-height: 35px;
+
+}
+
+.goods-type{
+  height: 200px;
+}
+
+.goods-buy{
+  margin: 10px 0;
+}
+
+.goods-num input{
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 48px;
+  height: 26px;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #666;
+  border: 1px solid #CCC;
+  outline: 0;
+  background: #FFF;
+}
+
+.goods-num a{
+  display: block;
+    float: left;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #ccc;
+    line-height: 26px;
+    padding: 0;
+    vertical-align: top;
+    overflow: hidden;
+    text-align: center;
+    background-color: #ededed;
+    overflow: hidden;
+}
+
+.goods-show{
+  margin: 10px auto 0;
+  width: 1140px;
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.goods-show-content{
+  
+  margin-bottom: 20px;
+}
+
+.goods-show-recom{
+  border: 1px solid #E8E8E8;
+  float: left;
+}
+
+.goods-recom-content{
+  width: 210px;
+}
+
+.goods-recom-content img{
+  width: 100px;
+  height: 100px;
+}
+
+.goods-recom-content ul{
+  list-style: none;
+  padding: 0;
+}
+
+.goods-recom-content li{
+  width: 100%;
+  height: 210px;
+  padding: 10px 0;
+  border: 1px solid #E8E8E8;
+  text-align: center;
+}
+
+.goods-show-detail{
+  float: left;
+  padding-left: 70px;
+}
+
+.searchresult{
+  background: #f3f5f7;
+  padding-top: 0;
+  min-height: 750px;
+  padding: 20px 0;
+}
+
+.searchresult-content{
+  width: 1140px;
+  margin: 0 auto;
+}
+
+/** shoppingcard**/
+.shoppingcard{
+  position: relative;
+  overflow: hidden;
+  /* background: #efefef */
+}
+
+.shoppingcard-content{
+  margin: 10px auto 0;
+  width: 1140px;
+  position: relative;
+}
+
+.shoppingcard-step{
+  padding: 30px 0 ;
+  margin: 10px auto 0;
+  width: 740px;
+
+}
+
+.shoppingcard-detail-bottom{
+  padding: 20px 50px;
+}
+.shoppingcard-detail-bottom p{
+  text-align: right;
+}
+
+.shoppingcard-detail-bottom button{
+  float: right;
+}
+
+.shoppingcard-addresslist ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.shoppingcard-addresslist ul li{
+  border: 1px dashed #bdbdbd;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.shoppingcard-addresslist h2{
+  padding-bottom: 7px;
+  font-size: 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+.shoppingcard-confirmGoods h2{
+  padding-bottom: 7px;
+  font-size: 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+.shoppingcard-message h2{
+  padding-bottom: 7px;
+  font-size: 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+.shoppingcard-step2bottom{
+  width: 200px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.shoppingcard-choosepay h2 {
+  padding-bottom: 7px;
+  font-size: 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+.shopping-paytype{
+  border-bottom: 1px solid #efefef;
+}
+.shopping-paytype ul{
+  list-style: none;
+  line-height: 100px;
+    height: 100px;
+}
+
+.shopping-paytype ul li{
+  float: left;
+  margin: 0 20px;
+}
+
+.shopping-step3bottom{
+  width: 200px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.shoppingcard-addressForm{
+  width: 300px;
+}
+
+.allTrade{
+  display: inline-block;
+  background-color: white;
+  vertical-align: top;
+  margin-left: 20px;
+  width:calc(100% - 170px);
+  min-height: 480px;
+}
+
+.allTrade ul{
+  list-style: none;
+  height: 30px;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.allTrade ul li{
+  float: left;
+}
+
+.trackingNumInput{
+  width: 300px;
 }
