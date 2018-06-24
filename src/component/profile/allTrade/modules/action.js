@@ -57,5 +57,4 @@ export const queryTradeDetail = (tradeId)=> dispatch=>{
             message.error("系统异常！")
         }
     })
-
 }

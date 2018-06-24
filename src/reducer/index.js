@@ -7,6 +7,7 @@ import signUp from '../component/signup/modules/reducer'
 import userConfig from './userConfig'
 import myTrade from '../component/profile/myTrade/modules/reducer'
 import allTrade from '../component/profile/allTrade/modules/reducer'
+import goodsManage from '../component/profile/goodsManage/modules/reducer'
 
 export default combineReducers({
     search,
@@ -16,5 +17,6 @@ export default combineReducers({
     signUp,
     userConfig,
     myTrade,
-    allTrade
+    allTrade,
+    goodsManage
 })

@@ -26,7 +26,7 @@ class ShoppingCard extends Component {
 
     render() {
         let step = this.state.step;
-        const { shoppingCardList, delFormShoppingCard,addAddr,addressList,changeData,addressId,addTrade,tradeId } = this.props;
+        const { shoppingCardList, delFormShoppingCard,addAddr,addressList,changeData,addressId,addTrade,tradeId,toAliPay } = this.props;
         return (
             <div className="shoppingcard">
                 <div className="shoppingcard-content">
@@ -53,6 +53,7 @@ class ShoppingCard extends Component {
                     /> : null}
                     {step === 2 ? <Step3 
                     tradeId = {tradeId}
+                    toAliPay = {toAliPay}
                     /> : null}
                 </div>
 

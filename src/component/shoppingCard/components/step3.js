@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { Steps, Button, Table, Icon, Radio } from 'antd'
+import { Steps, Button, Table, Icon, Radio, Modal } from 'antd'
 
 const RadioGroup = Radio.Group;
 
 export default class Step3 extends Component {
     state = {
-        choose: 1
+        choose: 1,
+        toPay: false
     }
 
     onChange = (e) => {
-        console.error("e:"+e.target.value)
         this.setState({
             choose: e.target.value,
-          });
+        });
     }
 
     render() {
@@ -33,9 +33,9 @@ export default class Step3 extends Component {
                 address: "123123"
             },
         ]
-        const { tradeId } = this.props;
+        const { tradeId, toAliPay } = this.props;
+        const { toPay, choose } = this.state;
 
-        
         return (
             <div className="shoppingcard-detail">
                 <div className="shoppingcard-choosepay">
@@ -55,10 +55,35 @@ export default class Step3 extends Component {
                         </ul>
                     </div>
                     <div className="shopping-step3bottom">
-                        <button>去支付</button>
+                        <button onClick={() => {
+                            if (choose === 1) {
+                                toAliPay(tradeId)
+                                this.setState({ toPay: true })
+                            }
+
+                        }}>去支付</button>
                     </div>
                 </div>
-
+                <Modal
+                    title="请在弹出的支付页面付款"
+                    visible={toPay}
+                    footer={null}
+                >
+                    <Button
+                    onClick = {()=>{
+                        this.setState({toPay:false})
+                    }}
+                    >
+                        我已付款
+                    </Button>
+                    <Button
+                    onClick = {()=>{
+                        this.setState({toPay:false})
+                    }}
+                    >
+                    取消
+                    </Button>
+                </Modal>
             </div>
         )
     }

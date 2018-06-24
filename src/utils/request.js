@@ -16,6 +16,10 @@ export async function post(url, params) {
         url,
         data: qs.stringify(params)
     })
+    // if(resp.headers === "text/html;charset=UTF-8"){
+    //     window.open(resp.data)
+    // }
+    // console.log("respherader："+JSON.stringify(resp.headers))
     console.log("resp："+JSON.stringify(resp.data))
     if (resp.data.rescode == '202' || (resp.data.rescode == '201' && resp.data.msg == '未登录')) {
         // CommonInfo.reLoginWithNoConfirm();

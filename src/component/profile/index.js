@@ -5,6 +5,7 @@ import ProfileLeft from '../profileLeft'
 
 import MyTrade from './myTrade'
 import AllTrade from './allTrade'
+import GoodsManage from './goodsManage'
 
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
@@ -21,10 +22,11 @@ class Profile extends React.Component {
                     <Switch key='profile'>
                         <Route path='/profile/myTrade' component={MyTrade} />
                         <Route path='/profile/allTrade' component={AllTrade} />
+                        <Route path='/profile/goodsManage' component={GoodsManage} />
                         {/* <Route path='/profile/personInfo' component={PersonInfo} />
                         
                         <Route path='/profile/friends' component={Friends} />
-                        <Route path='/profile/classmanage' component={ClassManage} />
+                       
                         <Route path='/profile/recharge' component={Recharge} /> */}
                     </Switch>
                 </div>

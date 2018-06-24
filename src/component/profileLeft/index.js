@@ -15,7 +15,7 @@ class ProfileLeft extends Component {
                     {userId === 'C18062100000003'?
                     <li><NavLink to='/profile/allTrade' activeStyle = {activeStyle}>所有订单</NavLink></li> :null}
                      {userId === 'C18062100000003'?
-                    <li><NavLink to='/profile/classmanage' activeStyle = {activeStyle}>商品管理</NavLink></li> :null}
+                    <li><NavLink to='/profile/goodsManage' activeStyle = {activeStyle}>商品管理</NavLink></li> :null}
                     {userId === 'C18062100000003'?
                     <li><NavLink to='/profile/recharge' activeStyle = {activeStyle}>充值管理</NavLink></li> :null}
                     {/* <li><NavLink to='/profile/personCenter' activeStyle = {activeStyle}>收藏</NavLink></li>

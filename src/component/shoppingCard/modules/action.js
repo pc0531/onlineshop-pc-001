@@ -84,3 +84,19 @@ export const getAddrList = (userId) => dispatch => {
         }
     })
 }
+
+export const toAliPay = (tradeId)=> dispatch =>{
+    let hostname = window.location.hostname;
+    let loaction = hostname+':8081'
+    window.open(`http://${loaction}/pay/createAliPay?tradeId=${tradeId}`)
+    // post('/pay/createAliPay',formData).then((res) => {
+    //     if (res) {
+    //         console.error("res"+res);
+    //         //dispatch({ type: `${profix}-getAddressList`, data: res })
+    //     }
+    // }).catch((err) => {
+    //     if (err) {
+    //         message.error("系统异常！")
+    //     }
+    // })
+}

@@ -92,14 +92,8 @@ class MyTrade extends Component {
                             <a onClick={() => {
                                 deleteOrder(text.orderId)
                             }}>删除</a>
-                            <a onClick={() => {
-                                this.setState({visible:true,orderId:text.orderId})
-                            }}>支付</a>
                         </p>
                         : null
-
-
-
                 )
             },
         ]
@@ -109,26 +103,9 @@ class MyTrade extends Component {
         return (
             <div className='myorder'>
                 <div className='myorderContent'>
-                    <h3>物流信息</h3>
+                    <h3>我的订单</h3>
                     <Table columns={columns} dataSource={orderList} />
                 </div>
-                <Modal
-                    title="收银台"
-                    visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                    width='200px'
-                >
-                    <div className='payModal'>
-                        <span>请输入支付密码</span>
-                        <Input
-                            className='payPasswordInput'
-                            value={payPassword}
-                            onChange={(e) => {
-                                this.setState({ payPassword: e.target.value })
-                            }} />
-                    </div>
-                </Modal>
             </div>
         )
     }

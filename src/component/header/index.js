@@ -42,20 +42,19 @@ class Header extends Component {
     }
 
     render() {
-        const { userName } = this.props;
+        const { phoneNum } = this.props;
         let keyValue = this.state.keyValue;
         let currentUrl = window.location.href;
-        console.error("currentUrl:" + currentUrl);
         let a = currentUrl.indexOf("search");
-        console.error("a:" + a);
+        console.error("phoneNum:"+phoneNum);
         return (
             <header>
                 <div className="headerTop">
                     <div className="headerContent">
                         {
-                            userName ? <span>您好： <Link to='/profile/personInfo'>{userName}</Link></span> : <Link to='/signin'>登录</Link>
+                            phoneNum ? <span>您好： <Link to='/profile/myTrade'>{phoneNum}</Link></span> : <Link to='/signin'>登录</Link>
                         }
-                        <span style = {{marginLeft:'300px'}}><Link to ='/shoppingCard'>购物车</Link></span>
+                        <span style = {{marginLeft:'100px'}}><Link to ='/shoppingCard'>购物车</Link></span>
                     </div>
                 </div>
                 <nav>
@@ -101,7 +100,7 @@ class Header extends Component {
 }
 
 const wh = connect(state => ({
-    ...state
+    ...state.userConfig
 }))(Header)
 
 export default withRouter(wh)
