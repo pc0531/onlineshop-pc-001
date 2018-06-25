@@ -50,28 +50,32 @@ export default class Step1 extends Component {
         };
         let shoppingcardlist = this.props.shoppingcardlist;
         let totalCash = 0;
-        if(shoppingcardlist){
+        if (shoppingcardlist) {
             shoppingcardlist.map((ele) => {
                 if (ele.goodsPrice) {
                     totalCash += ele.num * ele.goodsPrice
                 }
             })
         }
-       
+
         return (
             <div className="shoppingcard-detail">
                 <Table rowSelection={rowSelection} columns={columns} dataSource={shoppingcardlist} />
                 <div className="shoppingcard-detail-bottom">
-                    <p>共计{shoppingcardlist?shoppingcardlist.length:0}种商品，共{totalCash}元</p>
+                    <p>共计{shoppingcardlist ? shoppingcardlist.length : 0}种商品，共<span>￥{totalCash}</span>元</p>
+
+                </div>
+                <div className="clear"></div>
+                <div className="shoppingcard-detail-button" >
                     <button onClick={() => {
-                        console.error("selectedRowKeys："+selectedRowKeys)
-                        if(selectedRowKeys.length === 0 ||!selectedRowKeys){
+                        console.error("selectedRowKeys：" + selectedRowKeys)
+                        if (selectedRowKeys.length === 0 || !selectedRowKeys) {
                             message.error("请选中商品！")
                             return;
                         }
                         this.props.onChangeStep(1)
                     }}>去结算</button>
-                    <button>登录</button>
+                    {/* <button>登录</button> */}
                 </div>
             </div>
         )

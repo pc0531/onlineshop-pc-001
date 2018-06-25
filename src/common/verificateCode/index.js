@@ -45,7 +45,7 @@ export default class VerificateCode extends Component {
             <div
                 className={className}
                 style={{
-                    color: clickable_ ? '#ffd501' : '#e0e0e0',
+                    color: clickable_ ? '#38BCA4' : '#e0e0e0',
                     cursor: clickable_ ? 'pointer' : 'default',
                     ...style
                 }}

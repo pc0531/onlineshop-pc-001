@@ -9,6 +9,7 @@ import ShoppingCard from '../shoppingCard'
 import SignIn from '../signin'
 import SignUp from '../signup'
 import Profile from '../profile'
+import Help from '../help'
 
 export default class Layout extends Component {
     render() {
@@ -24,6 +25,7 @@ export default class Layout extends Component {
                 <Route path="/signin" component={SignIn} />
                 <Route path="/signup" component={SignUp} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/help" component={Help} />
                 {/* <Route path="/course" component={Course} />
                 <Route path="/class" component={Class} />
                 <Route path="/order" component={Order} /> */}

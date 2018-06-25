@@ -58,6 +58,10 @@ export const changeData = (mark, data) => dispatch => {
 }
 
 export const addAddr = (formatData) => (dispatch, getState) => {
+    let userId = getState().userConfig.userId;
+    if(userId){
+        formatData.userId = userId;
+    }
     post('/address/insertAddress', formatData).then((res) => {
         if (res) {
             let addressList = getState().shoppingCard.addressList;
@@ -85,9 +89,9 @@ export const getAddrList = (userId) => dispatch => {
     })
 }
 
-export const toAliPay = (tradeId)=> dispatch =>{
+export const toAliPay = (tradeId) => dispatch => {
     let hostname = window.location.hostname;
-    let loaction = hostname+':8081'
+    let loaction = hostname + ':8081'
     window.open(`http://${loaction}/pay/createAliPay?tradeId=${tradeId}`)
     // post('/pay/createAliPay',formData).then((res) => {
     //     if (res) {

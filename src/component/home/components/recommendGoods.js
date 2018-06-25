@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import recom from '../../../assets/recom-1.png'
 
 export default class RecommendGoods extends Component {
     render(){
         return(
             <div className='recommendTeacher'>
             <div className='recommendTeacher-top'>
-                <h3>名校推荐</h3>
+                <h3>精品推荐</h3>
                 <span>限时出售 l 性价比高</span>
             </div>
             <ul className='recommendTeacher-bottom'>
@@ -21,14 +22,14 @@ export default class RecommendGoods extends Component {
                 </li>
                 <li className='recommendTeacher-bottom-left'>
                     <a>
-                        <img src='http://sjbz.fd.zol-img.com.cn/t_s1080x1920c/g5/M00/0E/08/ChMkJ1rdiOCIIql2AALe68A4IjwAAn0ugIKDtAAAt8D756.jpg' />
+                        <img src={recom}/>
                     </a>
                 </li>
                 <li className='recommendTeacher-bottom-center-left'>
                     <a href='http://www.xueda.com/'>
-                        <img src='https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/1d057a63977e86f6ec4e6b8c3a54e18a_121_121.jpg' />
-                        <p style = {{color:'#97cf00'}}>学大教育</p>
-                        <p style={{ paddingTop: '10px' }}>公务员考试热招</p>
+                        <img src='https://gd2.alicdn.com/imgextra/i2/2889424183/TB29.G0rL9TBuNjy1zbXXXpepXa_!!2889424183.jpg_400x400.jpg_.webp' />
+                        <p style = {{color:'#97cf00'}}>优选菜&nbsp;仓有米</p>
+                        <p style={{ paddingTop: '10px' }}>￥68</p>
                     </a>
                 </li>
                 <li className='recommendTeacher-bottom-center-top'>

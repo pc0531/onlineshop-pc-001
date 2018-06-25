@@ -2,12 +2,13 @@ import React, { Component } from "react"
 import { NavLink, Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import logo from '../../assets/logo.png'
-import { Input } from 'antd';
+import { Input,message } from 'antd';
+import {post}  from '../../utils/request'
 const Search = Input.Search;
 
 const initRows = [
     { title: '首页', url: '/home' },
-    { title: '商城中心', url: '/shoppingCard' },
+    { title: '商城中心', url: '/help' },
     // { title: '解决方案', url: '/solve' },
     // { title: '客户案例', url: '/customer' },
     { title: '帮助中心', url: '/help' },
@@ -41,20 +42,36 @@ class Header extends Component {
         // })
     }
 
+    logOut = ()=>{
+        post('/user/logOut',{}).then(res => {
+            if (res) {
+                message.success(res);
+                window.location.href = '/'
+            }
+        }).catch((err) => {
+            message.error(err.message)
+        })
+    }
+
     render() {
         const { phoneNum } = this.props;
         let keyValue = this.state.keyValue;
         let currentUrl = window.location.href;
         let a = currentUrl.indexOf("search");
-        console.error("phoneNum:"+phoneNum);
+        console.error("phoneNum:" + phoneNum);
         return (
             <header>
                 <div className="headerTop">
                     <div className="headerContent">
                         {
-                            phoneNum ? <span>您好： <Link to='/profile/myTrade'>{phoneNum}</Link></span> : <Link to='/signin'>登录</Link>
+                            phoneNum ?
+                                <span>
+                                    您好： <Link to='/profile/myTrade'>{phoneNum}</Link>
+                                    <a onClick = {this.logOut}>退出登录</a>
+                                </span>
+                                : <Link to='/signin'>登录</Link>
                         }
-                        <span style = {{marginLeft:'100px'}}><Link to ='/shoppingCard'>购物车</Link></span>
+                        <span style={{ marginLeft: '100px' }}><Link to='/shoppingCard'>购物车</Link></span>
                     </div>
                 </div>
                 <nav>

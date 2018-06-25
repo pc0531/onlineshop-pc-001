@@ -138,14 +138,14 @@ class AllTrade extends Component {
                 render: (text) => {
                     if (text.tradeStatus === 1) {
                         return
-                        (<p>
+                        (<p style={{margin:0}}>
                             <a>去支付</a>
                             <a>删除</a>
                         </p>)
                     }
                     if (text.tradeStatus === 2) {
                         return (
-                            <p>
+                            <p style={{margin:0}}>
                                 <a onClick={() => {
                                     queryAddress(text.addressId, text.id, () => {
                                         this.setState({ detailModal: true }
@@ -167,7 +167,7 @@ class AllTrade extends Component {
                     }
                     if (text.tradeStatus === 5 || text.tradeStatus === 3) {
                         return (
-                            <p>
+                            <p style={{margin:0}}>
                                 <a onClick={() => {
                                     queryAddress(text.addressId, text.id, () => {
                                         this.setState({ detailModal: true }

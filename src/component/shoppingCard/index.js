@@ -26,7 +26,7 @@ class ShoppingCard extends Component {
 
     render() {
         let step = this.state.step;
-        const { shoppingCardList, delFormShoppingCard,addAddr,addressList,changeData,addressId,addTrade,tradeId,toAliPay } = this.props;
+        const { shoppingCardList, delFormShoppingCard, addAddr, addressList, changeData, addressId, addTrade, tradeId, toAliPay, getAddrList, userId } = this.props;
         return (
             <div className="shoppingcard">
                 <div className="shoppingcard-content">
@@ -44,16 +44,18 @@ class ShoppingCard extends Component {
                     /> : null}
                     {step === 1 ? <Step2
                         onChangeStep={(value) => this.onChangeStep(value)}
-                        addAddr = {(formateData)=>addAddr(formateData)}
-                        addressList ={addressList}
-                        changeData = {(mark,data) =>changeData(mark,data)}
-                        addressId = {addressId}
-                        shoppingCardList = {shoppingCardList}
-                        addTrade = {(callback)=>addTrade(callback)}
+                        addAddr={(formateData) => addAddr(formateData)}
+                        addressList={addressList}
+                        changeData={(mark, data) => changeData(mark, data)}
+                        addressId={addressId}
+                        shoppingCardList={shoppingCardList}
+                        addTrade={(callback) => addTrade(callback)}
+                        userId={userId}
+                        getAddrList={(id) => getAddrList(id)}
                     /> : null}
-                    {step === 2 ? <Step3 
-                    tradeId = {tradeId}
-                    toAliPay = {toAliPay}
+                    {step === 2 ? <Step3
+                        tradeId={tradeId}
+                        toAliPay={toAliPay}
                     /> : null}
                 </div>
 
@@ -63,7 +65,7 @@ class ShoppingCard extends Component {
 
 }
 const mapStateToProps = (state) => {
-    return { ...state.shoppingCard }
+    return { ...state.shoppingCard, ...state.userConfig }
 }
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators(actions, dispatch)

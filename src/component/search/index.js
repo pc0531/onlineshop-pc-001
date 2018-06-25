@@ -35,7 +35,7 @@ class Search extends Component {
                                 <div className='course-card-container' key={index}>
                                     <Link to={{ ...router, state: ele }}>
                                         <div className='course-card-top'>
-                                            <img src="https://gd2.alicdn.com/imgextra/i4/2889424183/TB29Bb4uuySBuNjy1zdXXXPxFXa_!!2889424183.jpg">
+                                            <img src={ele.goodsPicUrl}>
                                             </img>
                                         </div>
                                         <div className='course-card-content'>

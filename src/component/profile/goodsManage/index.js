@@ -81,7 +81,10 @@ class GoodsManage extends Component {
                                     goodsPrice: text.goodsPrice,
                                     goodsNum: text.goodsNum,
                                     goodsPicUrl: text.goodsPicUrl,
-                                    goodsDescription: text.goodsDescription
+                                    goodsType:text.goodsType,
+                                    goodsDescription: text.goodsDescription,
+                                    goodsDescriptionPicUrl:text.goodsDescriptionPicUrl
+
                                 }
                             )
                             this.setState({ modalShow: true, mark: 'update',goodsId:text.id })
@@ -182,12 +185,12 @@ class GoodsManage extends Component {
                                     <Input />
                                 )}
                             </FormItem>
-                            <FormItem label="商品描述" {...formItemLayout}>
-                                {getFieldDecorator('goodsDescription', {
+                            <FormItem label="商品规格" {...formItemLayout}>
+                                {getFieldDecorator('goodsType', {
                                     validateTrigger: ["onBlur"],
                                     rules: [{
                                         required: true,
-                                        message: '请输入商品描述',
+                                        message: '请输入商品规格',
                                     }],
                                 })(
                                     <Input />
@@ -204,6 +207,29 @@ class GoodsManage extends Component {
                                     <Input />
                                 )}
                             </FormItem>
+                            <FormItem label="商品描述" {...formItemLayout}>
+                                {getFieldDecorator('goodsDescription', {
+                                    validateTrigger: ["onBlur"],
+                                    rules: [{
+                                        required: true,
+                                        message: '请输入商品描述',
+                                    }],
+                                })(
+                                    <Input />
+                                )}
+                            </FormItem>
+                            <FormItem label="商品描述图片" {...formItemLayout}>
+                                {getFieldDecorator('goodsDescriptionPicUrl', {
+                                    validateTrigger: ["onBlur"],
+                                    rules: [{
+                                        required: true,
+                                        message: '请输入商品描述图片地址',
+                                    }],
+                                })(
+                                    <Input />
+                                )}
+                            </FormItem>
+                           
                         </Form>
 
                     </div>

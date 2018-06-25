@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import './App.css';
 import { hot } from 'react-hot-loader'
 import { connect } from 'react-redux'
 import { Router } from 'react-router-dom'
 import { createBrowserHistory as createHistory } from 'history'
 import Layout from './component/layout'
+import { sync } from './component/signin/modules/action'
+import store from './store'
 
 class App extends Component {
   static getEnhancer() {
@@ -18,9 +21,19 @@ class App extends Component {
     return h
   }
 
+  static childContextTypes = {
+    getUserConfig: PropTypes.func
+}
+
   constructor(props) {
     super(props)
-    // store.dispatch(sync())
+    store.dispatch(sync())
+  }
+
+  getChildContext() {
+    return {
+      getUserConfig: () => store.getState().userConfig
+    }
   }
 
 

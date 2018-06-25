@@ -83,7 +83,7 @@ class SignIn extends React.Component {
                         </Form>
                     </div>
                     <div className='login-register'>
-                    <p>还没有注册小鸣账号？</p>
+                    <p>还没有注册优选菜账号？</p>
                     <Button onClick = {()=>{
                         this.gotoPage("/signup")
                     }}>注册</Button>
