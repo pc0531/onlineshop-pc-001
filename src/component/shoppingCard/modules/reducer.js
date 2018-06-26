@@ -2,7 +2,8 @@ const initState = {
     shoppingCardList: [],
     addressList: [],
     addressId:'',
-    tradeId:''
+    tradeId:'',
+    msg:''
 }
 
 const profix = `shoppingCard`;
@@ -15,6 +16,7 @@ export default function (state = initState, action) {
         case `${profix}-changetradeId`: return { ...state, tradeId: action.data }
         case `${profix}-addAddress`: return { ...state, addr: action.data }
         case `${profix}-getAddressList`: return { ...state, addressList: action.data }
+        case `${profix}-changemsg`: return { ...state, msg: action.data }
         default: return state
     }
 }

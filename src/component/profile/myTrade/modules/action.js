@@ -5,7 +5,8 @@ const profix = `myOrder`;
 
 export const getOrderList = () => (dispatch,getState) =>{
     const state = getState();
-    let userId = state.userConfig.id
+    let userId = state.userConfig.id;
+    dispatch(queryTradeCount(userId));
     post('/trade/queryTrade',{userId:userId}).then((res)=>{
         if(res){
             dispatch({type:`${profix}-getOrderList`,data:res})
@@ -30,17 +31,10 @@ export const deleteOrder = (orderId) => (dispatch,getState) =>{
     })
 }
 
-export const payOrder = (payType, userCode, payPassword, orderId,cb) => (dispatch, getState) => {
-    let param = {
-        orderId: orderId,
-        payType: payType,
-        payerCode: userCode,
-        payPassword: RSA.encryptedString(payPassword)
-    }
-    post('/pay/addPay', param).then((res) => {
+export const queryTradeCount = (userId) => (dispatch) =>{
+    post('/trade/queryCount', {userId:userId}).then((res) => {
         if (res) {
-            dispatch(getOrderList())
-            cb()
+            dispatch({type:`${profix}-queryTradeCount`,data:res})
         }
     }).catch((err) => {
         message.error("系统异常请稍后再试!")

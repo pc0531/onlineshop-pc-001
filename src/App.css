@@ -737,6 +737,12 @@
   padding: 20px;
   height: 100%;
 }
+
+.myorderContent h3 span{
+  padding-left: 20px;
+  font-size: 15px;
+  color: rgb(56, 188, 164);
+}
 .myorderContent a{
   color: #38BCA4;
   padding: 0 10px;
@@ -1658,6 +1664,7 @@ float: left;
   position: relative;
   overflow: hidden;
   min-height: 700px;
+  padding-bottom: 50px;
   /* background: #efefef */
 }
 
@@ -1795,16 +1802,42 @@ float: left;
   border-bottom: 1px solid #efefef;
 }
 
+.shoppingcard-message-textArea{
+  width: 300px;
+}
+
 .shoppingcard-step2bottom{
-  width: 200px;
+  width: 300px;
   margin: 0 auto;
   padding: 50px 0;
+}
+
+.shoppingcard-step2bottom button:first-child{
+  background: white;
+  color: #a1bc22 ;
+}
+
+.shoppingcard-step2bottom button{
+  width: 120px;
+  height: 40px;
+  border: 1px solid #a1bc22;
+  background: #a1bc22;
+  color: white;
+  outline: 0;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .shoppingcard-choosepay h2 {
   padding-bottom: 7px;
   font-size: 20px;
   border-bottom: 1px solid #efefef;
+}
+
+.shoppingcard-choosepay p{
+  padding-left: 40px;
+  font-size: 18px;
+  padding-top: 20px;
 }
 
 .shopping-paytype{
@@ -1825,6 +1858,17 @@ float: left;
   width: 200px;
   margin: 0 auto;
   padding: 50px 0;
+}
+
+.shopping-step3bottom button{
+  width: 120px;
+  height: 40px;
+  border: 1px solid #a1bc22;
+  background: #a1bc22;
+  color: white;
+  outline: 0;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 
@@ -1891,4 +1935,102 @@ float: left;
 
 footer{
   background: #efefef;
+}
+
+/** query **/
+.query{
+  background: #efefef;
+  padding: 30px 0;
+}
+
+.queryContent{
+  width: 1200px;
+  margin: 0 auto;
+  padding: 30px 50px;
+  background: white;
+  min-height: 500px;
+}
+
+.queryContent h2 span{
+  padding-left: 20px;
+}
+
+.queryContent-top{
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 20px;
+}
+
+.queryContent-bottom{
+  padding-left: 20px;
+}
+
+
+.queryContent-bottom p span{
+  font-size: 17px;
+  padding-right: 20px;
+}
+
+.queryContent-bottom p input{
+  height: 37px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  width: 200px;
+  padding-left: 10px;
+  font-size: 16px;
+  outline: 0;
+  margin-right: 40px;
+}
+
+.queryContent-bottom p button{
+  width: 80px;
+  height: 37px;
+  border: 1px solid #a1bc22;
+  background: #a1bc22;
+  color: white;
+  outline: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.queryContent-detail{
+  padding: 20px 50px;
+}
+
+.queryContent-detail ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.queryContent-detail ul li{
+  margin-bottom: 40px;
+  border: 1px dashed;
+  padding: 20px 30px;
+}
+
+.queryContent-detail ul li p{
+  margin-bottom: 5px;
+}
+
+.queryContent-detail-noTrade{
+
+}
+
+.queryContent-detail-noTrade h2{
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 17px;
+  font-weight: 400;
+}
+.queryContent-detail-noTrade h2 span{
+  padding: 20px;
+}
+
+
+
+
+
+
+.queryContent-detail ul li p span{
+  font-size: 16px;
+  padding-right: 20px;
 }

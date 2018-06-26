@@ -10,7 +10,7 @@ import SignIn from '../signin'
 import SignUp from '../signup'
 import Profile from '../profile'
 import Help from '../help'
-
+import Query from '../query'
 export default class Layout extends Component {
     render() {
         return [
@@ -26,6 +26,7 @@ export default class Layout extends Component {
                 <Route path="/signup" component={SignUp} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/help" component={Help} />
+                <Route path="/query" component={Query} />
                 {/* <Route path="/course" component={Course} />
                 <Route path="/class" component={Class} />
                 <Route path="/order" component={Order} /> */}

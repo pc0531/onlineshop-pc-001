@@ -72,6 +72,7 @@ class Header extends Component {
                                 : <Link to='/signin'>登录</Link>
                         }
                         <span style={{ marginLeft: '100px' }}><Link to='/shoppingCard'>购物车</Link></span>
+                        <span style={{ marginLeft: '100px' }}><Link to='/query'>查询订单</Link></span>
                     </div>
                 </div>
                 <nav>

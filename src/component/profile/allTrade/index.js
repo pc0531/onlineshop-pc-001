@@ -1,27 +1,26 @@
 
 import React, { Component } from 'react';
-import { Icon, Input, Button, Table, Modal } from 'antd'
+import { Icon, Input, Button, Table, Modal,message } from 'antd'
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import * as actions from './modules/action'
 import moment from 'moment'
 import { createDecipheriv } from 'crypto';
+import Constants from '../../../common/Constants'
 
-const tradeStatus = {
-    6: "已取消",
+// const tradeStatus = {
+//     6: "已取消",
 
-    5: "已完成",
+//     5: "已完成",
 
-    2: "未发货",
+//     2: "未发货",
 
-    1: "待支付",
+//     1: "待支付",
 
-    3: "已发货",
+//     3: "已发货",
 
-    4: "申请取消",
-
-
-}
+//     4: "申请取消",
+// }
 
 const payType = {
     balance: 1,
@@ -78,7 +77,8 @@ class AllTrade extends Component {
         trackingNum: '',
         tradeId: '',
         haveTracking: false,
-        addressId: ''
+        addressId: '',
+        msg: ''
     }
 
     componentDidMount() {
@@ -92,6 +92,11 @@ class AllTrade extends Component {
         let param = {
             tradeId: tradeId,
             trackingNum: trackingNum
+        }
+        console.error("trackingNum："+!trackingNum);
+        if(!trackingNum){
+            message.error("请输入快递单号");
+            return;
         }
         updateTracking(param, () => {
             this.setState({ trackingModal: false })
@@ -129,7 +134,7 @@ class AllTrade extends Component {
                 title: '订单状态',
                 width: '14%',
                 align: 'center',
-                render: (text) => tradeStatus[text]
+                render: (text) => Constants.tradeStatus[text]
             },
             {
                 title: '操作',
@@ -138,17 +143,21 @@ class AllTrade extends Component {
                 render: (text) => {
                     if (text.tradeStatus === 1) {
                         return
-                        (<p style={{margin:0}}>
+                        (<p style={{ margin: 0 }}>
                             <a>去支付</a>
                             <a>删除</a>
                         </p>)
                     }
                     if (text.tradeStatus === 2) {
                         return (
-                            <p style={{margin:0}}>
+                            <p style={{ margin: 0 }}>
                                 <a onClick={() => {
                                     queryAddress(text.addressId, text.id, () => {
-                                        this.setState({ detailModal: true }
+                                        this.setState(
+                                            {
+                                                detailModal: true,
+                                                msg: text.msg
+                                            }
                                         )
                                     })
 
@@ -167,10 +176,14 @@ class AllTrade extends Component {
                     }
                     if (text.tradeStatus === 5 || text.tradeStatus === 3) {
                         return (
-                            <p style={{margin:0}}>
+                            <p style={{ margin: 0 }}>
                                 <a onClick={() => {
                                     queryAddress(text.addressId, text.id, () => {
-                                        this.setState({ detailModal: true }
+                                        this.setState(
+                                            {
+                                                detailModal: true,
+                                                msg: text.msg
+                                            }
                                         )
                                     })
 
@@ -186,12 +199,12 @@ class AllTrade extends Component {
             },
         ]
 
-        const { tradeList, deleteOrder, getTradeList, queryAddress, address, tradeDetailList } = this.props
-        const { trackingNum, status, haveTracking } = this.state;
+        const { tradeList, deleteOrder, getTradeList, queryAddress, address, tradeDetailList, tradeCount } = this.props
+        const { trackingNum, status, haveTracking,msg } = this.state;
         return (
             <div className='allTrade'>
                 <div className='myorderContent'>
-                    <h3>全部订单</h3>
+                    <h3>全部订单<span>总数:{tradeCount}</span></h3>
                     <ul>
                         {chooseTop.map((ele) => {
                             if (ele.id === status) {
@@ -290,6 +303,10 @@ class AllTrade extends Component {
                                 <p>
                                     <span style={{ paddingRight: '20px' }}>电话:</span>
                                     {address[0].phoneNum}
+                                </p>
+                                <p>
+                                    <span style={{ paddingRight: '20px' }}>留言:</span>
+                                    {msg ? msg : "无"}
                                 </p>
                                 <Table columns={tradeDetailColumn} dataSource={tradeDetailList} />
                             </div>

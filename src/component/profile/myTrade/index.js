@@ -98,12 +98,12 @@ class MyTrade extends Component {
             },
         ]
 
-        const { orderList, deleteOrder } = this.props
+        const { orderList, deleteOrder,tradeCount } = this.props
         let payPassword = this.state.payPassword
         return (
             <div className='myorder'>
                 <div className='myorderContent'>
-                    <h3>我的订单</h3>
+                    <h3>我的订单<span>总数:{tradeCount}</span></h3>
                     <Table columns={columns} dataSource={orderList} />
                 </div>
             </div>

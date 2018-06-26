@@ -1,4 +1,19 @@
 const Constants = {}
+
+Constants.tradeStatus = {
+  6: "已取消",
+
+  5: "已完成",
+
+  2: "未发货",
+
+  1: "待支付",
+
+  3: "已发货",
+
+  4: "申请取消",
+}
+
 Constants.address = [
   {
     value: '北京市',
@@ -1485,40 +1500,40 @@ Constants.address = [
         children: [{
           value: '和平区',
           label: '和平区',
-        },{
+        }, {
           value: '沈河区',
           label: '沈河区',
-        },{
+        }, {
           value: '大东区',
           label: '大东区',
-        },{
+        }, {
           value: '皇姑区',
           label: '皇姑区',
-        },{
+        }, {
           value: '铁西区',
           label: '铁西区',
-        },{
+        }, {
           value: '苏家屯区',
           label: '苏家屯区',
-        },{
+        }, {
           value: '浑南区',
           label: '浑南区',
-        },{
+        }, {
           value: '沈北新区',
           label: '沈北新区',
-        },{
+        }, {
           value: '于洪区',
           label: '于洪区',
-        },{
+        }, {
           value: '辽中区',
           label: '辽中区',
-        },{
+        }, {
           value: '康平县',
           label: '康平县',
-        },{
+        }, {
           value: '法库县',
           label: '法库县',
-        },{
+        }, {
           value: '新民市',
           label: '新民市',
         }]
@@ -1529,31 +1544,31 @@ Constants.address = [
         children: [{
           value: '中山区',
           label: '中山区',
-        },{
+        }, {
           value: '西岗区',
           label: '西岗区',
-        },{
+        }, {
           value: '沙河口区',
           label: '沙河口区',
-        },{
+        }, {
           value: '甘井子区',
           label: '甘井子区',
-        },{
+        }, {
           value: '旅顺口区',
           label: '旅顺口区',
-        },{
+        }, {
           value: '金州区',
           label: '金州区',
-        },{
+        }, {
           value: '普兰店区',
           label: '普兰店区',
-        },{
+        }, {
           value: '长海县',
           label: '长海县',
-        },{
+        }, {
           value: '瓦房店市',
           label: '瓦房店市',
-        },{
+        }, {
           value: '庄河市',
           label: '庄河市',
         }]
@@ -1564,22 +1579,22 @@ Constants.address = [
         children: [{
           value: '铁东区',
           label: '铁东区',
-        },{
+        }, {
           value: '铁西区',
           label: '铁西区',
-        },{
+        }, {
           value: '立山区',
           label: '立山区',
-        },{
+        }, {
           value: '千山区',
           label: '千山区',
-        },{
+        }, {
           value: '台安县',
           label: '台安县',
-        },{
+        }, {
           value: '岫岩满族自治县',
           label: '岫岩满族自治县',
-        },{
+        }, {
           value: '海城市',
           label: '海城市',
         }]
@@ -1590,22 +1605,22 @@ Constants.address = [
         children: [{
           value: '新抚区',
           label: '新抚区',
-        },{
+        }, {
           value: '东洲区',
           label: '东洲区',
-        },{
+        }, {
           value: '望花区',
           label: '望花区',
-        },{
+        }, {
           value: '顺城区',
           label: '顺城区',
-        },{
+        }, {
           value: '抚顺县',
           label: '抚顺县',
-        },{
+        }, {
           value: '新宾满族自治县',
           label: '新宾满族自治县',
-        },{
+        }, {
           value: '清原满族自治县',
           label: '清原满族自治县',
         }]
@@ -1616,19 +1631,19 @@ Constants.address = [
         children: [{
           value: '平山区',
           label: '平山区',
-        },{
+        }, {
           value: '溪湖区',
           label: '溪湖区',
-        },{
+        }, {
           value: '明山区',
           label: '明山区',
-        },{
+        }, {
           value: '南芬区',
           label: '南芬区',
-        },{
+        }, {
           value: '本溪满族自治县',
           label: '本溪满族自治县',
-        },{
+        }, {
           value: '桓仁满族自治县',
           label: '桓仁满族自治县',
         }]
@@ -1639,19 +1654,19 @@ Constants.address = [
         children: [{
           value: '元宝区',
           label: '元宝区',
-        },{
+        }, {
           value: '振兴区',
           label: '振兴区',
-        },{
+        }, {
           value: '振安区',
           label: '振安区',
-        },{
+        }, {
           value: '宽甸满族自治县',
           label: '宽甸满族自治县',
-        },{
+        }, {
           value: '东港市',
           label: '东港市',
-        },{
+        }, {
           value: '凤城市',
           label: '凤城市',
         }]
@@ -1662,22 +1677,22 @@ Constants.address = [
         children: [{
           value: '古塔区',
           label: '古塔区',
-        },{
+        }, {
           value: '凌河区',
           label: '凌河区',
-        },{
+        }, {
           value: '太和区',
           label: '太和区',
-        },{
+        }, {
           value: '黑山县',
           label: '黑山县',
-        },{
+        }, {
           value: '义县',
           label: '义县',
-        },{
+        }, {
           value: '凌海市',
           label: '凌海市',
-        },{
+        }, {
           value: '北镇市',
           label: '北镇市',
         }]
@@ -1688,19 +1703,19 @@ Constants.address = [
         children: [{
           value: '站前区',
           label: '站前区',
-        },{
+        }, {
           value: '西市区',
           label: '西市区',
-        },{
+        }, {
           value: '鲅鱼圈区',
           label: '鲅鱼圈区',
-        },{
+        }, {
           value: '老边区',
           label: '老边区',
-        },{
+        }, {
           value: '盖州市',
           label: '盖州市',
-        },{
+        }, {
           value: '大石桥市',
           label: '大石桥市',
         }]
@@ -1711,22 +1726,22 @@ Constants.address = [
         children: [{
           value: '海州区',
           label: '海州区',
-        },{
+        }, {
           value: '新邱区',
           label: '新邱区',
-        },{
+        }, {
           value: '太平区',
           label: '太平区',
-        },{
+        }, {
           value: '清河门区',
           label: '清河门区',
-        },{
+        }, {
           value: '细河区',
           label: '细河区',
-        },{
+        }, {
           value: '阜新蒙古族自治县',
           label: '阜新蒙古族自治县',
-        },{
+        }, {
           value: '彰武县',
           label: '彰武县',
         }]
@@ -1737,22 +1752,22 @@ Constants.address = [
         children: [{
           value: '白塔区',
           label: '白塔区',
-        },{
+        }, {
           value: '文圣区',
           label: '文圣区',
-        },{
+        }, {
           value: '宏伟区',
           label: '宏伟区',
-        },{
+        }, {
           value: '弓长岭区',
           label: '弓长岭区',
-        },{
+        }, {
           value: '太子河区',
           label: '太子河区',
-        },{
+        }, {
           value: '辽阳县',
           label: '辽阳县',
-        },{
+        }, {
           value: '灯塔市',
           label: '灯塔市',
         }]
@@ -1763,13 +1778,13 @@ Constants.address = [
         children: [{
           value: '双台子区',
           label: '双台子区',
-        },{
+        }, {
           value: '兴隆台区',
           label: '兴隆台区',
-        },{
+        }, {
           value: '大洼区',
           label: '大洼区',
-        },{
+        }, {
           value: '盘山县',
           label: '盘山县',
         }]
@@ -1780,22 +1795,22 @@ Constants.address = [
         children: [{
           value: '银州区',
           label: '银州区',
-        },{
+        }, {
           value: '清河区',
           label: '清河区',
-        },{
+        }, {
           value: '铁岭县',
           label: '铁岭县',
-        },{
+        }, {
           value: '西丰县',
           label: '西丰县',
-        },{
+        }, {
           value: '昌图县',
           label: '昌图县',
-        },{
+        }, {
           value: '调兵山市',
           label: '调兵山市',
-        },{
+        }, {
           value: '开原市',
           label: '开原市',
         }]
@@ -1806,22 +1821,22 @@ Constants.address = [
         children: [{
           value: '双塔区',
           label: '双塔区',
-        },{
+        }, {
           value: '龙城区',
           label: '龙城区',
-        },{
+        }, {
           value: '朝阳县',
           label: '朝阳县',
-        },{
+        }, {
           value: '建平县',
           label: '建平县',
-        },{
+        }, {
           value: '喀左县',
           label: '喀左县',
-        },{
+        }, {
           value: '北票市',
           label: '北票市',
-        },{
+        }, {
           value: '凌源市',
           label: '凌源市',
         }]
@@ -1832,19 +1847,19 @@ Constants.address = [
         children: [{
           value: '连山区',
           label: '连山区',
-        },{
+        }, {
           value: '龙港区',
           label: '龙港区',
-        },{
+        }, {
           value: '南票区',
           label: '南票区',
-        },{
+        }, {
           value: '绥中县',
           label: '绥中县',
-        },{
+        }, {
           value: '建昌县',
           label: '建昌县',
-        },{
+        }, {
           value: '兴城市',
           label: '兴城市',
         }]
@@ -1861,31 +1876,31 @@ Constants.address = [
         children: [{
           value: '南关区',
           label: '南关区',
-        },{
+        }, {
           value: '宽城区',
           label: '宽城区',
-        },{
+        }, {
           value: '朝阳区',
           label: '朝阳区',
-        },{
+        }, {
           value: '二道区',
           label: '二道区',
-        },{
+        }, {
           value: '绿园区',
           label: '绿园区',
-        },{
+        }, {
           value: '双阳区',
           label: '双阳区',
-        },{
+        }, {
           value: '九台区',
           label: '九台区',
-        },{
+        }, {
           value: '农安县',
           label: '农安县',
-        },{
+        }, {
           value: '榆树市',
           label: '榆树市',
-        },{
+        }, {
           value: '德惠市',
           label: '德惠市',
         }]
@@ -1896,28 +1911,28 @@ Constants.address = [
         children: [{
           value: '昌邑区',
           label: '昌邑区',
-        },{
+        }, {
           value: '龙潭区',
           label: '龙潭区',
-        },{
+        }, {
           value: '船营区',
           label: '船营区',
-        },{
+        }, {
           value: '丰满区',
           label: '丰满区',
-        },{
+        }, {
           value: '永吉县',
           label: '永吉县',
-        },{
+        }, {
           value: '蛟河市',
           label: '蛟河市',
-        },{
+        }, {
           value: '桦甸市',
           label: '桦甸市',
-        },{
+        }, {
           value: '舒兰市',
           label: '舒兰市',
-        },{
+        }, {
           value: '磐石市',
           label: '磐石市',
         }]
@@ -1928,19 +1943,19 @@ Constants.address = [
         children: [{
           value: '铁西区',
           label: '铁西区',
-        },{
+        }, {
           value: '铁东区',
           label: '铁东区',
-        },{
+        }, {
           value: '梨树县',
           label: '梨树县',
-        },{
+        }, {
           value: '伊通满族自治县',
           label: '伊通满族自治县',
-        },{
+        }, {
           value: '公主岭市',
           label: '公主岭市',
-        },{
+        }, {
           value: '双辽市',
           label: '双辽市',
         }]
@@ -1951,13 +1966,13 @@ Constants.address = [
         children: [{
           value: '龙山区',
           label: '龙山区',
-        },{
+        }, {
           value: '西安区',
           label: '西安区',
-        },{
+        }, {
           value: '东丰县',
           label: '东丰县',
-        },{
+        }, {
           value: '东辽县',
           label: '东辽县',
         }]
@@ -1968,22 +1983,22 @@ Constants.address = [
         children: [{
           value: '东昌区',
           label: '东昌区',
-        },{
+        }, {
           value: '二道江区',
           label: '二道江区',
-        },{
+        }, {
           value: '通化县',
           label: '通化县',
-        },{
+        }, {
           value: '辉南县',
           label: '辉南县',
-        },{
+        }, {
           value: '柳河县',
           label: '柳河县',
-        },{
+        }, {
           value: '梅河口市',
           label: '梅河口市',
-        },{
+        }, {
           value: '集安市',
           label: '集安市',
         }]
@@ -1994,19 +2009,19 @@ Constants.address = [
         children: [{
           value: '浑江区',
           label: '浑江区',
-        },{
+        }, {
           value: '江源区',
           label: '江源区',
-        },{
+        }, {
           value: '抚松县',
           label: '抚松县',
-        },{
+        }, {
           value: '长白县',
           label: '长白县',
-        },{
+        }, {
           value: '临江市',
           label: '临江市',
-        },{
+        }, {
           value: '靖宇县',
           label: '靖宇县',
         }]
@@ -2017,16 +2032,16 @@ Constants.address = [
         children: [{
           value: '宁江区',
           label: '宁江区',
-        },{
+        }, {
           value: '前郭尔罗斯县',
           label: '前郭尔罗斯县',
-        },{
+        }, {
           value: '长岭县',
           label: '长岭县',
-        },{
+        }, {
           value: '乾安县',
           label: '乾安县',
-        },{
+        }, {
           value: '扶余市',
           label: '扶余市',
         }]
@@ -2037,16 +2052,16 @@ Constants.address = [
         children: [{
           value: '洮北区',
           label: '洮北区',
-        },{
+        }, {
           value: '镇赉县',
           label: '镇赉县',
-        },{
+        }, {
           value: '通榆县',
           label: '通榆县',
-        },{
+        }, {
           value: '洮南市',
           label: '洮南市',
-        },{
+        }, {
           value: '大安市',
           label: '大安市',
         }]
@@ -2057,25 +2072,25 @@ Constants.address = [
         children: [{
           value: '延吉市',
           label: '延吉市',
-        },{
+        }, {
           value: '图们市',
           label: '图们市',
-        },{
+        }, {
           value: '敦化市',
           label: '敦化市',
-        },{
+        }, {
           value: '珲春市',
           label: '珲春市',
-        },{
+        }, {
           value: '龙井市',
           label: '龙井市',
-        },{
+        }, {
           value: '和龙市',
           label: '和龙市',
-        },{
+        }, {
           value: '汪清县',
           label: '汪清县',
-        },{
+        }, {
           value: '安图县',
           label: '安图县',
         }]
@@ -2092,55 +2107,55 @@ Constants.address = [
         children: [{
           value: '道里区',
           label: '道里区',
-        },{
+        }, {
           value: '南岗区',
           label: '南岗区',
-        },{
+        }, {
           value: '道外区',
           label: '道外区',
-        },{
+        }, {
           value: '平房区',
           label: '平房区',
-        },{
+        }, {
           value: '松北区',
           label: '松北区',
-        },{
+        }, {
           value: '香坊区',
           label: '香坊区',
-        },{
+        }, {
           value: '呼兰区',
           label: '呼兰区',
-        },{
+        }, {
           value: '阿城区',
           label: '阿城区',
-        },{
+        }, {
           value: '双城区',
           label: '双城区',
-        },{
+        }, {
           value: '依兰县',
           label: '依兰县',
-        },{
+        }, {
           value: '方正县',
           label: '方正县',
-        },{
+        }, {
           value: '宾县',
           label: '宾县',
-        },{
+        }, {
           value: '巴彦县',
           label: '巴彦县',
-        },{
+        }, {
           value: '木兰县',
           label: '木兰县',
-        },{
+        }, {
           value: '通河县',
           label: '通河县',
-        },{
+        }, {
           value: '延寿县',
           label: '延寿县',
-        },{
+        }, {
           value: '尚志市',
           label: '尚志市',
-        },{
+        }, {
           value: '五常市',
           label: '五常市',
         }]
@@ -2151,55 +2166,55 @@ Constants.address = [
         children: [{
           value: '龙沙区',
           label: '龙沙区',
-        },{
+        }, {
           value: '建华区',
           label: '建华区',
-        },{
+        }, {
           value: '铁锋区',
           label: '铁锋区',
-        },{
+        }, {
           value: '昂昂溪区',
           label: '昂昂溪区',
-        },{
+        }, {
           value: '富拉尔基区',
           label: '富拉尔基区',
-        },{
+        }, {
           value: '碾子山区',
           label: '碾子山区',
-        },{
+        }, {
           value: '梅里斯达斡尔族区',
           label: '梅里斯达斡尔族区',
-        },{
+        }, {
           value: '龙江县',
           label: '龙江县',
-        },{
+        }, {
           value: '依安县',
           label: '依安县',
-        },{
+        }, {
           value: '龙江县',
           label: '龙江县',
-        },{
+        }, {
           value: '依安县',
           label: '依安县',
-        },{
+        }, {
           value: '泰来县',
           label: '泰来县',
-        },{
+        }, {
           value: '甘南县',
           label: '甘南县',
-        },{
+        }, {
           value: '富裕县',
           label: '富裕县',
-        },{
+        }, {
           value: '克山县',
           label: '克山县',
-        },{
+        }, {
           value: '克东县',
           label: '克东县',
-        },{
+        }, {
           value: '拜泉县',
           label: '拜泉县',
-        },{
+        }, {
           value: '讷河市',
           label: '讷河市',
         }]
@@ -2210,28 +2225,28 @@ Constants.address = [
         children: [{
           value: '鸡冠区',
           label: '鸡冠区',
-        },{
+        }, {
           value: '恒山市',
           label: '恒山市',
-        },{
+        }, {
           value: '滴道区',
           label: '滴道区',
-        },{
+        }, {
           value: '梨树区',
           label: '梨树区',
-        },{
+        }, {
           value: '城子河区',
           label: '城子河区',
-        },{
+        }, {
           value: '麻山区',
           label: '麻山区',
-        },{
+        }, {
           value: '鸡东县',
           label: '鸡东县',
-        },{
+        }, {
           value: '虎林市',
           label: '虎林市',
-        },{
+        }, {
           value: '密山市',
           label: '密山市',
         }]
@@ -2242,25 +2257,25 @@ Constants.address = [
         children: [{
           value: '向阳区',
           label: '向阳区',
-        },{
+        }, {
           value: '工农区',
           label: '工农区',
-        },{
+        }, {
           value: '南山区',
           label: '南山区',
-        },{
+        }, {
           value: '兴安区',
           label: '兴安区',
-        },{
+        }, {
           value: '东山区',
           label: '东山区',
-        },{
+        }, {
           value: '兴山区',
           label: '兴山区',
-        },{
+        }, {
           value: '萝北县',
           label: '萝北县',
-        },{
+        }, {
           value: '绥滨县',
           label: '绥滨县',
         }]
@@ -2271,7 +2286,7 @@ Constants.address = [
         children: [{
           value: '尖山区',
           label: '尖山区',
-        },{
+        }, {
           value: '岭东区',
           label: '岭东区',
         },],
@@ -2279,19 +2294,19 @@ Constants.address = [
         children: [{
           value: '四方台区',
           label: '四方台区',
-        },{
+        }, {
           value: '宝山区',
           label: '宝山区',
-        },{
+        }, {
           value: '集贤县',
           label: '集贤县',
-        },{
+        }, {
           value: '友谊县',
           label: '友谊县',
-        },{
+        }, {
           value: '宝清县',
           label: '宝清县',
-        },{
+        }, {
           value: '饶河县',
           label: '饶河县',
         }]
@@ -2302,28 +2317,28 @@ Constants.address = [
         children: [{
           value: '萨尔图区',
           label: '萨尔图区',
-        },{
+        }, {
           value: '龙凤区',
           label: '龙凤区',
-        },{
+        }, {
           value: '让胡路区',
           label: '让胡路区',
-        },{
+        }, {
           value: '红岗区',
           label: '红岗区',
-        },{
+        }, {
           value: '大同区',
           label: '大同区',
-        },{
+        }, {
           value: '肇州县',
           label: '肇州县',
-        },{
+        }, {
           value: '肇源县',
           label: '肇源县',
-        },{
+        }, {
           value: '林甸县',
           label: '林甸县',
-        },{
+        }, {
           value: '杜尔伯特蒙县',
           label: '杜尔伯特蒙县',
         }]
@@ -2334,52 +2349,52 @@ Constants.address = [
         children: [{
           value: '伊春区',
           label: '伊春区',
-        },{
+        }, {
           value: '南岔区',
           label: '南岔区',
-        },{
+        }, {
           value: '友好区',
           label: '友好区',
-        },{
+        }, {
           value: '西林区',
           label: '西林区',
-        },{
+        }, {
           value: '翠峦区',
           label: '翠峦区',
-        },{
+        }, {
           value: '新青区',
           label: '新青区',
-        },{
+        }, {
           value: '美溪区',
           label: '美溪区',
-        },{
+        }, {
           value: '金山屯',
           label: '金山屯',
-        },{
+        }, {
           value: '五营区',
           label: '五营区',
-        },{
+        }, {
           value: '乌马河',
           label: '乌马河',
-        },{
+        }, {
           value: '汤旺河',
           label: '汤旺河',
-        },{
+        }, {
           value: '带岭区',
           label: '带岭区',
-        },{
+        }, {
           value: '乌伊岭',
           label: '乌伊岭',
-        },{
+        }, {
           value: '红星区',
           label: '红星区',
-        },{
+        }, {
           value: '上甘岭',
           label: '上甘岭',
-        },{
+        }, {
           value: '嘉荫县',
           label: '嘉荫县',
-        },{
+        }, {
           value: '铁力市',
           label: '铁力市',
         }]
@@ -2390,31 +2405,31 @@ Constants.address = [
         children: [{
           value: '向阳区',
           label: '向阳区',
-        },{
+        }, {
           value: '前进区',
           label: '前进区',
-        },{
+        }, {
           value: '东风区',
           label: '东风区',
-        },{
+        }, {
           value: '郊区',
           label: '郊区',
-        },{
+        }, {
           value: '桦南县',
           label: '桦南县',
-        },{
+        }, {
           value: '桦川县',
           label: '桦川县',
-        },{
+        }, {
           value: '汤原县',
           label: '汤原县',
-        },{
+        }, {
           value: '抚远市',
           label: '抚远市',
-        },{
+        }, {
           value: '同江市',
           label: '同江市',
-        },{
+        }, {
           value: '富锦市',
           label: '富锦市',
         }]
@@ -2425,13 +2440,13 @@ Constants.address = [
         children: [{
           value: '新兴区',
           label: '新兴区',
-        },{
+        }, {
           value: '桃山市',
           label: '桃山市',
-        },{
+        }, {
           value: '茄子河区',
           label: '茄子河区',
-        },{
+        }, {
           value: '勃利县',
           label: '勃利县',
         }]
@@ -2442,31 +2457,31 @@ Constants.address = [
         children: [{
           value: '东安区',
           label: '东安区',
-        },{
+        }, {
           value: '阳明区',
           label: '阳明区',
-        },{
+        }, {
           value: '爱民区',
           label: '爱民区',
-        },{
+        }, {
           value: '西安区',
           label: '西安区',
-        },{
+        }, {
           value: '林口县',
           label: '林口县',
-        },{
+        }, {
           value: '绥芬河市',
           label: '绥芬河市',
-        },{
+        }, {
           value: '海林市',
           label: '海林市',
-        },{
+        }, {
           value: '宁安市',
           label: '宁安市',
-        },{
+        }, {
           value: '穆棱市',
           label: '穆棱市',
-        },{
+        }, {
           value: '东宁市',
           label: '东宁市',
         }]
@@ -2477,22 +2492,22 @@ Constants.address = [
         children: [{
           value: '爱辉区',
           label: '爱辉区',
-        },{
+        }, {
           value: '嫩江县',
           label: '嫩江县',
-        },{
+        }, {
           value: '逊克县',
           label: '逊克县',
-        },{
+        }, {
           value: '孙吴县',
           label: '孙吴县',
-        },{
+        }, {
           value: '北安市',
           label: '北安市',
-        },{
+        }, {
           value: '五大连池市',
           label: '五大连池市',
-        },{
+        }, {
           value: '海林市',
           label: '海林市',
         }]
@@ -2503,31 +2518,31 @@ Constants.address = [
         children: [{
           value: '北林区',
           label: '北林区',
-        },{
+        }, {
           value: '望奎县',
           label: '望奎县',
-        },{
+        }, {
           value: '兰西县',
           label: '兰西县',
-        },{
+        }, {
           value: '青冈县',
           label: '青冈县',
-        },{
+        }, {
           value: '庆安县',
           label: '庆安县',
-        },{
+        }, {
           value: '明水县',
           label: '明水县',
-        },{
+        }, {
           value: '绥棱县',
           label: '绥棱县',
-        },{
+        }, {
           value: '安达市',
           label: '安达市',
-        },{
+        }, {
           value: '肇东市',
           label: '肇东市',
-        },{
+        }, {
           value: '海伦市',
           label: '海伦市',
         }]
@@ -2538,22 +2553,22 @@ Constants.address = [
         children: [{
           value: '加格达奇区',
           label: '加格达奇区',
-        },{
+        }, {
           value: '松岭区',
           label: '松岭区',
-        },{
+        }, {
           value: '新林区',
           label: '新林区',
-        },{
+        }, {
           value: '呼中区',
           label: '呼中区',
-        },{
+        }, {
           value: '呼玛县',
           label: '呼玛县',
-        },{
+        }, {
           value: '塔河县',
           label: '塔河县',
-        },{
+        }, {
           value: '漠河县',
           label: '漠河县',
         }]

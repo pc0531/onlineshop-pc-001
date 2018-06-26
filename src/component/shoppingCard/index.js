@@ -26,7 +26,7 @@ class ShoppingCard extends Component {
 
     render() {
         let step = this.state.step;
-        const { shoppingCardList, delFormShoppingCard, addAddr, addressList, changeData, addressId, addTrade, tradeId, toAliPay, getAddrList, userId } = this.props;
+        const { shoppingCardList, delFormShoppingCard, addAddr, addressList, changeData, addressId, addTrade, tradeId, toAliPay, getAddrList, userId,msg } = this.props;
         return (
             <div className="shoppingcard">
                 <div className="shoppingcard-content">
@@ -52,6 +52,7 @@ class ShoppingCard extends Component {
                         addTrade={(callback) => addTrade(callback)}
                         userId={userId}
                         getAddrList={(id) => getAddrList(id)}
+                        msg = {msg}
                     /> : null}
                     {step === 2 ? <Step3
                         tradeId={tradeId}

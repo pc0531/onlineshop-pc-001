@@ -8,6 +8,8 @@ export const addTrade = (callback) => (dispatch, getState) => {
     let phoneNum = '';
     let addressList = state.shoppingCard.addressList;
     let goodsList = state.shoppingCard.shoppingCardList;
+    let msg = state.shoppingCard.msg;
+    let userId = state.userConfig.userId;
     addressList.map((ele) => {
         if (ele.id === addressId) {
             phoneNum = ele.phoneNum;
@@ -22,6 +24,12 @@ export const addTrade = (callback) => (dispatch, getState) => {
         formatData["goodsDetailFormList[" + index + "].num"] = ele.num;
         formatData["goodsDetailFormList[" + index + "].goodsPrice"] = ele.goodsPrice;
     })
+    if(msg){
+        formatData.msg = msg;
+    }
+    if(userId){
+        formatData.userId = userId;
+    }
     post('/trade/insertTrade', formatData).then((res) => {
         if (res) {
             dispatch({ type: `${profix}-changetradeId`, data: res.id })

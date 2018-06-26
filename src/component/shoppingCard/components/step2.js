@@ -42,7 +42,7 @@ class Step2Form extends Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         let toAddAddr = this.state.toAddAddr;
-        const { addressId, addressList, addAddr, onChangeStep, changeData, shoppingCardList, addTrade } = this.props;
+        const { addressId, addressList, addAddr, onChangeStep, changeData, shoppingCardList, addTrade,msg } = this.props;
         const formItemLayout = {
             labelCol: {
                 xs: { span: 18 },
@@ -170,14 +170,14 @@ class Step2Form extends Component {
                                             <Input />
                                         )}
                                     </FormItem>
-                                   
+
                                     <button
                                         onClick={() => {
                                             this.setState({ toAddAddr: false })
                                         }}
-                                        style = {
+                                        style={
                                             {
-                                                background:'white',
+                                                background: 'white',
                                                 color: '#a1bc22',
                                                 marginRight: '40px',
                                                 marginLeft: '20px',
@@ -229,7 +229,11 @@ class Step2Form extends Component {
                 </div>
                 <div className="shoppingcard-message">
                     <h2><Icon type="message" /><span style={{ paddingLeft: '20px' }}>留言</span></h2>
-                    <TextArea placeholder="Autosize height with minimum and maximum number of lines" autosize={{ minRows: 2, maxRows: 6 }} />
+                    <div className = "shoppingcard-message-textArea">
+                        <TextArea placeholder="请输入留言" rows={4} onChange = {(e)=>{
+                            changeData('msg', e.target.value);
+                        }} value = {msg}/>
+                    </div>
                 </div>
                 <div className="shoppingcard-step2bottom">
                     <button style={{ float: 'left' }} onClick={() => {
