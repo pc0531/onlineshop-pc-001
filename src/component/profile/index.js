@@ -17,7 +17,7 @@ class Profile extends React.Component {
         return (
             <div className='profile'>
                 <div className='profileContent'>
-                    <Redirect from='/profile' to='/profile/personInfo' />
+                    <Redirect from='/profile' to='/profile/myTrade' />
                     <ProfileLeft key='prol' userId={userId} />
                     <Switch key='profile'>
                         <Route path='/profile/myTrade' component={MyTrade} />

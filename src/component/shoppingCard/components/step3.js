@@ -49,8 +49,6 @@ export default class Step3 extends Component {
                         <ul>
                             <RadioGroup onChange={this.onChange} value={this.state.choose}>
                                 <li><Radio value={1}><img src="https://t.alipayobjects.com/images/rmsweb/T1.a4gXo4sXXXXXXXX.png" /></Radio></li>
-                                <li><Radio value={2}><img src="https://wx.gtimg.com/pay/img/common/logo.png?v=20160114" /></Radio></li>
-                                <li><Radio value={3}><img src="https://t.alipayobjects.com/images/rmsweb/T1.a4gXo4sXXXXXXXX.png" /></Radio></li>
                             </RadioGroup>
                         </ul>
                     </div>

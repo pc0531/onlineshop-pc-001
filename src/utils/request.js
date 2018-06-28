@@ -11,9 +11,10 @@ message.config({
 );
 export async function post(url, params) {
     let data;
+    let crossUrl = "/api"
     const resp = await axios({
         method: "POST",
-        url,
+        url : crossUrl + url,//解决刷新页面转向spring的页面
         data: qs.stringify(params)
     })
     // if(resp.headers === "text/html;charset=UTF-8"){

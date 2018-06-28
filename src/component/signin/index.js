@@ -27,7 +27,7 @@ class SignIn extends React.Component {
             }
             const formatData = getFieldsValue()
             signIn(formatData, () => {
-                this.gotoPage("/profile/personInfo")
+                this.gotoPage("/profile/myTrade")
             })
 
         })

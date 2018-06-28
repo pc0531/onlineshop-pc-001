@@ -66,13 +66,16 @@ class Header extends Component {
                         {
                             phoneNum ?
                                 <span>
-                                    您好： <Link to='/profile/myTrade'>{phoneNum}</Link>
+                                    您好：{phoneNum} 
                                     <a onClick = {this.logOut}>退出登录</a>
                                 </span>
-                                : <Link to='/signin'>登录</Link>
+                                : <Link to='/signin'>用户登录</Link>
+                        }{
+                            phoneNum ? <Link to='/profile/myTrade'>个人中心</Link> :null
                         }
-                        <span style={{ marginLeft: '100px' }}><Link to='/shoppingCard'>购物车</Link></span>
-                        <span style={{ marginLeft: '100px' }}><Link to='/query'>查询订单</Link></span>
+                        <span ><Link to='/query'>查询订单</Link></span>
+                        <span ><Link to='/shoppingCard'>购物车</Link></span>
+                       
                     </div>
                 </div>
                 <nav>

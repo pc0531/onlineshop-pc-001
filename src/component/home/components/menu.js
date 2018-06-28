@@ -3,31 +3,31 @@ import { Link } from 'react-router-dom'
 const initMenu = [
     {
         id: 0,
-        title: '学前辅导'
+        title: '粮油'
     },
     {
         id: 1,
-        title: '小学辅导'
+        title: '杂粮'
     },
     {
         id: 2,
-        title: '中学辅导'
+        title: '生鲜'
     },
     {
         id: 3,
-        title: '高等教育'
+        title: '农产品'
     },
     {
         id: 4,
-        title: '兴趣培训'
+        title: '干果'
     },
     {
         id: 5,
-        title: '舞蹈培训'
+        title: '山珍'
     },
     {
         id: 6,
-        title: '乐器'
+        title: '零食'
     }
 ]
 
