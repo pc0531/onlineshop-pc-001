@@ -11,7 +11,7 @@ class ProfileLeft extends Component {
             <div className='profileLeft'>
                 <ul>
                     <li><NavLink to='/profile/myTrade' activeStyle = {activeStyle}>我的订单</NavLink></li>
-                    <li><NavLink to='/profile/myAddress' activeStyle = {activeStyle}>我的地址</NavLink></li>
+                    {/* <li><NavLink to='/profile/myAddress' activeStyle = {activeStyle}>我的地址</NavLink></li> */}
                     {userId === 'C18062300000000'?
                     <li><NavLink to='/profile/allTrade' activeStyle = {activeStyle}>所有订单</NavLink></li> :null}
                      {userId === 'C18062300000000'?

@@ -7,7 +7,7 @@ const initMenu = [
     },
     {
         id: 1,
-        title: '杂粮'
+        title: '五谷杂粮'
     },
     {
         id: 2,

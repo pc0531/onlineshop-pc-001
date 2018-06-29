@@ -40,3 +40,30 @@ export const queryTradeCount = (userId) => (dispatch) =>{
         message.error("系统异常请稍后再试!")
     })
 }
+
+export const queryTradeDetail = (tradeId)=> dispatch=>{
+    post('/trade/queryTradeDetail', { tradeId: tradeId }).then((res) => {
+        if (res) {
+            dispatch({ type: `${profix}-getTradeDetail`, data: res })
+        }
+    }).catch((err) => {
+        if (err) {
+            message.error("系统异常！")
+        }
+    })
+}
+
+export const queryAddress = (addressId,tradeId,cb) => dispatch => {
+    post('/address/queryAddress', { id: addressId }).then((res) => {
+        if (res) {
+            dispatch({ type: `${profix}-getAddress`, data: res })
+            dispatch(queryTradeDetail(tradeId))
+            cb()
+        }
+    }).catch((err) => {
+        if (err) {
+            message.error("系统异常！")
+        }
+    })
+
+}

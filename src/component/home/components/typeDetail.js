@@ -1,25 +1,35 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
+import { getSearchList } from "../../search/modules/action"
+import store from '../../../store'
 
 const router = {
-    pathname :'/course',
-    state:{
+    pathname: '/course',
+    state: {
 
     }
 }
 
 const A = [
     {
-        id:0,
-        content:(
+        id: 0,
+        content: (
             <div className='typeDetail'>
                 <div className='innerBox'>
                     <div className='boxContent'>
-                        <p>粮油</p>
+                        <p>粮</p>
                         {/* <Link to={{ ...router, state: keyValue }}></Link> */}
-                        <Link to={{...router,state:{first:0,second:0,third:0}}}>语文</Link>
-                        <Link to={{...router,state:{first:0,second:0,third:1}}}>数学</Link>
-                        <Link to={{...router,state:{first:0,second:0,third:2}}}>英语</Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("仓优米"));
+                            }}>仓优米</span>
+                        </Link>
+                        <p>油</p>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("菜籽油"));
+                            }}>菜籽油</span>
+                        </Link>
                     </div>
                 </div>
                 <div className='recommondBox'>
@@ -29,17 +39,49 @@ const A = [
 
     },
     {
-        id:1,
-        content:(
+        id: 1,
+        content: (
             <div className='typeDetail'>
                 <div className='innerBox'>
                     <div className='boxContent'>
+                        <p>五谷</p>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("红豆"));
+                            }}>红豆</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("黑豆"));
+                            }}>黑豆</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("绿豆"));
+                            }}>绿豆</span>
+                        </Link>
                         <p>杂粮</p>
-                        <Link to={{...router,state:{first:1,second:0,third:0}}}>语文</Link>
-                        <Link to={{...router,state:{first:1,second:0,third:1}}}>数学</Link>
-                        <Link to={{...router,state:{first:1,second:0,third:2}}}>英语</Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("黑米"));
+                            }}>黑米</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("大麦糁"));
+                            }}>大麦糁</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("玉米糁"));
+                            }}>玉米糁</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("麦片"));
+                            }}>麦片</span>
+                        </Link>
                     </div>
-        
                 </div>
                 <div className='recommondBox'>
                 </div>
@@ -48,15 +90,32 @@ const A = [
 
     },
     {
-        id:2,
-        content:(
+        id: 2,
+        content: (
             <div className='typeDetail'>
                 <div className='innerBox'>
                     <div className='boxContent'>
                         <p>生鲜</p>
-                        <Link to={{...router,state:{first:2,second:0,third:0}}}>语文</Link>
-                        <Link to={{...router,state:{first:2,second:0,third:1}}}>数学</Link>
-                        <Link to={{...router,state:{first:2,second:0,third:2}}}>外语</Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("草鸡"));
+                            }}>草鸡</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("黑猪肉"));
+                            }}>黑猪肉</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("黄鳝"));
+                            }}>黄鳝</span>
+                        </Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("鸡蛋"));
+                            }}>鸡蛋</span>
+                        </Link>
                     </div>
                 </div>
                 <div className='recommondBox'>
@@ -65,17 +124,19 @@ const A = [
         )
     },
     {
-        id:3,
-        content:(
+        id: 3,
+        content: (
             <div className='typeDetail'>
                 <div className='innerBox'>
                     <div className='boxContent'>
                         <p>农产品</p>
-                        <Link to={{...router,state:{first:3,second:0,third:0}}}>CET</Link>
-                        <Link to={{...router,state:{first:3,second:0,third:1}}}>托福</Link>
-                        <Link to={{...router,state:{first:3,second:0,third:2}}}>雅思</Link>
+                        <Link to='/search'>
+                            <span onClick={() => {
+                                store.dispatch(getSearchList("豆角干"));
+                            }}>豆角干</span>
+                        </Link>
                     </div>
-                   
+
                 </div>
                 <div className='recommondBox'>
                 </div>
@@ -83,15 +144,13 @@ const A = [
         )
     },
     {
-        id:4,
-        content:(
+        id: 4,
+        content: (
             <div className='typeDetail'>
                 <div className='innerBox'>
                     <div className='boxContent'>
                         <p>干果</p>
-                        <Link to={{...router,state:{first:4,second:0,third:0}}}>钢琴</Link>
-                        <Link to={{...router,state:{first:4,second:0,third:1}}}>吉他</Link>
-                        <Link to={{...router,state:{first:4,second:0,third:2}}}>小提琴</Link>
+                        <h3>——————<span style={{ padding: '0px 20px' }}>敬请期待</span>——————</h3>
                     </div>
                 </div>
                 <div className='recommondBox'>
@@ -100,15 +159,13 @@ const A = [
         )
     },
     {
-        id:5,
-        content:(
+        id: 5,
+        content: (
             <div className='typeDetail'>
                 <div className='innerBox'>
                     <div className='boxContent'>
                         <p>山珍</p>
-                        <Link to={{...router,state:{first:5,second:0,third:0}}}>语文</Link>
-                        <Link to={{...router,state:{first:5,second:0,third:1}}}>数学</Link>
-                        <Link to={{...router,state:{first:5,second:0,third:2}}}>外语</Link>
+                        <h3>——————<span style={{ padding: '0px 20px' }}>敬请期待</span>——————</h3>
                     </div>
                 </div>
                 <div className='recommondBox'>
@@ -117,13 +174,13 @@ const A = [
         )
     },
     {
-        id:6,
-        content:(
+        id: 6,
+        content: (
             <div className='typeDetail'>
                 <div className='innerBox'>
                     <div className='boxContent'>
                         <p>零食</p>
-                        <h3>——————<span style = {{padding:'0px 20px'}}>敬请期待</span>——————</h3>
+                        <h3>——————<span style={{ padding: '0px 20px' }}>敬请期待</span>——————</h3>
                     </div>
                 </div>
                 <div className='recommondBox'>
@@ -138,9 +195,9 @@ const A = [
 
 export default class TypeDetail extends Component {
     render() {
-        let a = A.find((ele)=>(ele.id === this.props.activeId))
+        let a = A.find((ele) => (ele.id === this.props.activeId))
         return (
-            a?a.content:<div></div>
+            a ? a.content : <div></div>
         )
     }
 }

@@ -20,7 +20,7 @@ class Query extends Component {
             <div className="query">
                 <div className="queryContent">
                     <div className="queryContent-top">
-                        <h2><Icon type="user" /><span>查询页面</span></h2>
+                        <h2><Icon type="user" /><span>查询订单</span></h2>
                     </div>
                     <div className="queryContent-bottom">
                         <p>

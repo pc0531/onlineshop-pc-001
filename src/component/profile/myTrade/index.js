@@ -23,16 +23,40 @@ const tradeStatus = {
 
 }
 
+const tradeDetailColumn = [
+    {
+        dataIndex: 'goodsId',
+        title: '商品编号',
+        width: '40%',
+        align: 'center',
+    },
+    {
+        dataIndex: 'goodsName',
+        title: '商品名称',
+        width: '30%',
+        align: 'center',
+    },
+    {
+        dataIndex: 'goodsNum',
+        title: '商品数量',
+        width: '30%',
+        align: 'center',
+    }
+]
+
 const payType = {
-    balance:1,
-    ali:2,
-    wechat:3
+    balance: 1,
+    ali: 2,
+    wechat: 3
 }
 
 class MyTrade extends Component {
     state = {
         visible: false,
-        payPassword:''
+        detailModal: false,
+        trackingModal: false,
+        trackingNum: '',
+        msg: ''
     }
 
     componentDidMount() {
@@ -40,16 +64,12 @@ class MyTrade extends Component {
         getOrderList();
     }
 
-    handleOk = ()=> {
-        const { payOrder,userCode } = this.props;
-        let orderId = this.state.orderId;
-        payOrder(payType.balance,userCode,this.state.payPassword,orderId,()=>{
-            this.setState({visible:false})
-        })
+    detailCancel = () => {
+        this.setState({ detailModal: false })
     }
 
-    handleCancel = ()=> {
-        this.setState({ visible: false })
+    handleCancel = () => {
+        this.setState({ trackingModal: false })
     }
 
     render() {
@@ -87,33 +107,106 @@ class MyTrade extends Component {
                 width: '14%',
                 align: 'center',
                 render: (text) => (
-                    text.tradeStatus === 1 ?
-                        <p style={{ margin: '0' }}>
+                    <p style={{ margin: '0' }}>
+                        <a onClick={() => {
+                            console.error(text.msg)
+                            queryAddress(text.addressId, text.id, () => {
+                                this.setState(
+                                    {
+                                        detailModal: true,
+                                        msg: text.msg
+                                    }
+                                )
+                            })
+                        }}>详情</a>
+                        {text.tradeStatus === 1 ?
                             <a onClick={() => {
                                 deleteOrder(text.orderId)
-                            }}>删除</a>
-                        </p>
-                        : null
+                            }}>删除</a> : null}
+                        {text.tradeStatus === 3 ?
+                            <a onClick={() => {
+                                this.setState(
+                                    {
+                                        trackingModal: true,
+                                        trackingNum: text.trackingNum
+                                    }
+                                )
+                            }}>物流信息</a> : null}
+                    </p>
+
                 )
             },
         ]
 
-        const { orderList, deleteOrder,tradeCount } = this.props
-        let payPassword = this.state.payPassword
+        const { orderList, deleteOrder, tradeCount, queryAddress, address, tradeDetailList } = this.props
+        const { detailModal, msg, trackingNum, trackingModal } = this.state;
         return (
             <div className='myorder'>
                 <div className='myorderContent'>
                     <h3>我的订单<span>总数:{tradeCount}</span></h3>
                     <Table columns={columns} dataSource={orderList} />
                 </div>
+                <Modal
+                    title="订单详情"
+                    visible={this.state.detailModal}
+                    onCancel={this.detailCancel}
+                    width='600px'
+                    footer={null}
+                >
+                    {
+                        address[0] ?
+                            <div>
+                                <p>
+                                    <span style={{ paddingRight: '20px' }}>收货地址:</span>
+                                    {address[0].province + address[0].city + address[0].area + address[0].detail}
+                                </p>
+                                <p>
+                                    <span style={{ paddingRight: '20px' }}>收件人:</span>
+                                    {address[0].name}
+                                </p>
+                                <p>
+                                    <span style={{ paddingRight: '20px' }}>电话:</span>
+                                    {address[0].phoneNum}
+                                </p>
+                                <p>
+                                    <span style={{ paddingRight: '20px' }}>留言:</span>
+                                    {msg ? msg : "无"}
+                                </p>
+                                <Table columns={tradeDetailColumn} dataSource={tradeDetailList} />
+                            </div>
+                            : null
+                    }
+                </Modal>
+                <Modal
+                    title="物流信息"
+                    visible={this.state.trackingModal}
+                    onCancel={this.handleCancel}
+                    width='500px'
+                    footer={null}
+                >
+                    <div className='payModal'>
+                        <div>
+                            <p><span style={{ paddingRight: "20px" }}>查询地址:</span>
+                                <a onClick={() => {
+                                    window.open("http://www.kuaidi100.com/")
+                                }}>http://www.kuaidi100.com/</a>
+                            </p>
+                            <p>
+                                <span style={{ paddingRight: "20px" }}>快递单号:</span>{trackingNum ? trackingNum : null}
+                            </p>
+                        </div>
+                    </div>
+                </Modal>
+
             </div>
+
         )
     }
 }
 
 
 const mapStateToProps = (state) => {
-    return { ...state.myTrade ,...state.userConfig}
+    return { ...state.myTrade, ...state.userConfig }
 }
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators(actions, dispatch)

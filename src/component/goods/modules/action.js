@@ -1,9 +1,19 @@
 import store from '../../../store'
+import { post } from '../../../utils/request'
+import {message} from 'antd'
 const profix = `goods`
 
 
-export const sendMessage = () => dispatch => {
-
+export const getRecommendList = () => dispatch => {
+    post('/goods/findLatestGoods',{num:4}).then((res) => {
+        if (res) {
+            dispatch({ type: `${profix}-getRecommendList`, data: res })
+        }
+    }).catch((err) => {
+        if (err) {
+            message.error("系统异常！")
+        }
+    })
 }
 
 export const changeData = (mark, data) => dispatch => {

@@ -8,10 +8,17 @@ class Goods extends Component {
     state = {
         num: 1
     }
+
+    componentDidMount() {
+        const { getRecommendList } = this.props;
+        getRecommendList();
+    }
+
+
     render() {
         let num = this.state.num;
         let detail = this.props.location.state;
-        const { addToShoppingCard } = this.props;
+        const { addToShoppingCard, recommendList } = this.props;
         console.error("detail:" + JSON.stringify(detail));
         return (
             <div className="goods">
@@ -20,7 +27,7 @@ class Goods extends Component {
                         <div className="goods-detail-show">
                             <div className="goods-info-img">
                                 {/* <img src="https://gd2.alicdn.com/imgextra/i4/2889424183/TB29Bb4uuySBuNjy1zdXXXPxFXa_!!2889424183.jpg" /> */}
-                                <img src={detail.goodsPicUrl}/>
+                                <img src={detail.goodsPicUrl} />
                             </div>
                             <div className="goods-info">
                                 <h2>{detail.goodsName}</h2>
@@ -30,7 +37,7 @@ class Goods extends Component {
                                 </div>
                                 <div className="goods-type">
                                     <span>规格:</span>
-                                    <div className = "goods-type-content">
+                                    <div className="goods-type-content">
                                         {detail.goodsType}
                                     </div>
                                 </div>
@@ -71,22 +78,32 @@ class Goods extends Component {
                     <div className="goods-show-content">
                         <div className="goods-show-recom">
                             <div className="goods-recom-content">
-                                <p>猜您喜欢</p>
+                                <div className = "goods-recom-title"><span>猜您喜欢</span></div>
                                 <ul>
-                                    <li>
-                                        <img src="https://gd2.alicdn.com/imgextra/i4/2889424183/TB29Bb4uuySBuNjy1zdXXXPxFXa_!!2889424183.jpg" />
-                                        <p>商品名</p>
-                                        <button>加入购物车</button>
-                                    </li>
-                                    <li><img src="https://gd2.alicdn.com/imgextra/i4/2889424183/TB29Bb4uuySBuNjy1zdXXXPxFXa_!!2889424183.jpg" /></li>
-                                    <li><img src="https://gd2.alicdn.com/imgextra/i4/2889424183/TB29Bb4uuySBuNjy1zdXXXPxFXa_!!2889424183.jpg" /></li>
-                                    <li><img src="https://gd2.alicdn.com/imgextra/i4/2889424183/TB29Bb4uuySBuNjy1zdXXXPxFXa_!!2889424183.jpg" /></li>
+                                    {
+                                        recommendList && recommendList.length > 0 ?
+                                            recommendList.map((ele) => {
+                                                return (
+                                                    <li>
+                                                        <img src={ele.goodsPicUrl}/>
+                                                        <p>{ele.goodsName}</p>
+                                                        <h4>价格：<span>￥{ele.goodsPrice}</span></h4>
+                                                        <button
+                                                            onClick={() => {
+                                                                message.success("添加成功!");
+                                                                addToShoppingCard(ele,1)
+                                                            }}
+                                                        >加入购物车
+                                                        </button>
+                                                    </li>
+                                                )
+                                            }) : null
+                                    }
                                 </ul>
                             </div>
                         </div>
                         <div className="goods-show-detail">
                             <div style={{ background: '#91C000', width: '200px', fontSize: '20px', lineHeight: '50px', textAlign: 'center', color: 'white' }}>商品详情</div>
-                            {/* <img src="https://img.alicdn.com/imgextra/i1/2889424183/TB2O6i3gDCWBKNjSZFtXXaC3FXa_!!2889424183.jpg" /> */}
                             <img src={detail.goodsDescriptionPicUrl} />
                         </div>
                     </div>
@@ -97,7 +114,7 @@ class Goods extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { ...state }
+    return { ...state.goods }
 }
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators(actions, dispatch)

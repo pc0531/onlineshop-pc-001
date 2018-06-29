@@ -9,6 +9,7 @@ import myTrade from '../component/profile/myTrade/modules/reducer'
 import allTrade from '../component/profile/allTrade/modules/reducer'
 import goodsManage from '../component/profile/goodsManage/modules/reducer'
 import query from '../component/query/modules/reducer'
+import home from '../component/home/modules/reducer'
 
 export default combineReducers({
     search,
@@ -20,5 +21,6 @@ export default combineReducers({
     myTrade,
     allTrade,
     goodsManage,
-    query
+    query,
+    home
 })

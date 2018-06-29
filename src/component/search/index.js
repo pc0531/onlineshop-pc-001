@@ -13,23 +13,27 @@ const router = {
 const newclassList = []
 
 class Search extends Component {
-    componentDidMount(){
-        let keyValue = this.props.location.state;
-        const { getSearchList } = this.props;
-        getSearchList(keyValue);
-    }
+    // componentDidMount(){
+    //     // let keyValue = this.props.location.state;
+    //     const { getSearchList,searchContent } = this.props;
+    //     getSearchList(searchContent);
+    // }
     render() {
-        const { goodsList} = this.props;
+        const { goodsList } = this.props;
         return (
             <div className="searchresult">
-            <div className = "searchresult-content">
+                <div className="searchresult-content">
                     <div className='course-tool-bar'>
                         <div className='tool-left'>
                             <a>最新</a>
                             <a>最热</a>
                         </div>
                     </div>
+                    {
+                        goodsList.length === 0 ? <h3>——————<span>暂无商品</span>——————</h3> : null
+                    }
                     <div className='course-list'>
+
                         <div className='moco-course-list'>
                             {goodsList.map((ele, index) => (
                                 <div className='course-card-container' key={index}>
@@ -39,7 +43,7 @@ class Search extends Component {
                                             </img>
                                         </div>
                                         <div className='course-card-content'>
-                                            <h3>{"￥"+ele.goodsPrice}</h3>
+                                            <h3>{"￥" + ele.goodsPrice}</h3>
                                             <div className='course-card-bottom'>
                                                 <div className='course-card-info'>
                                                     {/* <span>基础</span>
@@ -54,12 +58,11 @@ class Search extends Component {
                                 </div>
                             ))
                             }
-
                         </div>
                     </div>
                 </div>
-                </div>
-        
+            </div>
+
         )
     }
 }

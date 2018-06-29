@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Icon, Input, Button, Table, Modal,message } from 'antd'
+import { Icon, Input, Button, Table, Modal, message } from 'antd'
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import * as actions from './modules/action'
@@ -93,8 +93,8 @@ class AllTrade extends Component {
             tradeId: tradeId,
             trackingNum: trackingNum
         }
-        console.error("trackingNum："+!trackingNum);
-        if(!trackingNum){
+        console.error("trackingNum：" + !trackingNum);
+        if (!trackingNum) {
             message.error("请输入快递单号");
             return;
         }
@@ -142,11 +142,10 @@ class AllTrade extends Component {
                 align: 'center',
                 render: (text) => {
                     if (text.tradeStatus === 1) {
-                        return
-                        (<p style={{ margin: 0 }}>
-                            <a>去支付</a>
-                            <a>删除</a>
-                        </p>)
+                        return (
+                            <p style={{ margin: 0 }}>
+                                {/* <a>删除</a> */}
+                            </p>)
                     }
                     if (text.tradeStatus === 2) {
                         return (
@@ -200,7 +199,7 @@ class AllTrade extends Component {
         ]
 
         const { tradeList, deleteOrder, getTradeList, queryAddress, address, tradeDetailList, tradeCount } = this.props
-        const { trackingNum, status, haveTracking,msg } = this.state;
+        const { trackingNum, status, haveTracking, msg } = this.state;
         return (
             <div className='allTrade'>
                 <div className='myorderContent'>
