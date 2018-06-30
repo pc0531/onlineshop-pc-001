@@ -18,7 +18,6 @@ export default class Step1 extends Component {
         const columns = [{
             title: '购物车中的商品',
             render: (text) => {
-                console.error("text:" + text);
                 return (
                     <a>
                         <img src={text.goodsPicUrl} style={{ width: '100px', height: '100px' }} />
@@ -68,7 +67,6 @@ export default class Step1 extends Component {
                 <div className="clear"></div>
                 <div className="shoppingcard-detail-button" >
                     <button onClick={() => {
-                        console.error("selectedRowKeys：" + selectedRowKeys)
                         if (selectedRowKeys.length === 0 || !selectedRowKeys) {
                             message.error("请选中商品！")
                             return;

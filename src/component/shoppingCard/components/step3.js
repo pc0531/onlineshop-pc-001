@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import { Steps, Button, Table, Icon, Radio, Modal } from 'antd'
-
+import packagePic from '../../../assets/package.png'
+import { Link } from 'react-router-dom'
 const RadioGroup = Radio.Group;
+
+const router = {
+    pathname: 'payResult',
+    state: ''
+}
 
 export default class Step3 extends Component {
     state = {
@@ -66,21 +72,31 @@ export default class Step3 extends Component {
                     title="请在弹出的支付页面付款"
                     visible={toPay}
                     footer={null}
+                    width='250px'
+                    onCancel={() => {
+                        this.setState({ toPay: false })
+                    }}
                 >
-                    <Button
-                    onClick = {()=>{
-                        this.setState({toPay:false})
-                    }}
-                    >
-                        我已付款
-                    </Button>
-                    <Button
-                    onClick = {()=>{
-                        this.setState({toPay:false})
-                    }}
-                    >
-                    取消
-                    </Button>
+                    <div className="shoppingCard-step3-modal">
+                        <img src={packagePic} />
+                        <Link to={{ ...router, state: tradeId }}>
+                            <button
+                                style={{
+                                    background: '#a1bc22',
+                                    color: 'white'
+                                }}
+                            >
+                                我已付款
+                        </button>
+                        </Link>
+                        <button
+                            onClick={() => {
+                                this.setState({ toPay: false })
+                            }}
+                        >
+                            取消
+                    </button>
+                    </div>
                 </Modal>
             </div>
         )

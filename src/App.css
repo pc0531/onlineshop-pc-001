@@ -1575,6 +1575,12 @@ float: left;
 
 .goods-info > h2{
   font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.goods-info > h4{
+  color: #666666;
+  margin-bottom: 20px;
 }
 
 .goods-price{
@@ -1594,8 +1600,18 @@ float: left;
   color: #f40;
 }
 
+.goods-send{
+  line-height: 35px;
+}
+
+.goods-send span{
+  padding-left: 0px;
+  font-size: 15px;
+  color: #6c6c6c;
+}
+
 .goods-type{
-  height: 120px;
+  height: 90px;
 }
 
 .goods-type span{
@@ -1991,6 +2007,29 @@ float: left;
   cursor: pointer;
 }
 
+.shoppingCard-step3-modal{
+  text-align: center;
+}
+
+
+.shoppingCard-step3-modal button{
+  width: 120px;
+  height: 40px;
+  border: 1px solid #a1bc22;
+  color:  #a1bc22;
+  background: white;
+  outline: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.shoppingCard-step3-modal img{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
 
 
 .allTrade{
@@ -2174,12 +2213,38 @@ footer{
   padding: 20px;
 }
 
-
-
-
-
-
 .queryContent-detail ul li p span{
   font-size: 16px;
   padding-right: 20px;
+}
+
+/**  payResult **/
+.payResult{
+  background: #efefef;
+  padding: 30px 0;
+}
+
+.payResult-content >h2{
+  padding-bottom: 5px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #efefef;
+}
+
+.payResult-content >img{
+  width: 270px;
+  margin-bottom: 50px;
+}
+
+.payResult-content >p{
+  color: #606060;
+  font-size: 16px;
+}
+
+.payResult-content{
+  width: 1200px;
+  margin: 0 auto;
+  padding: 30px 50px;
+  background: white;
+  min-height: 500px; 
+  text-align: center;
 }

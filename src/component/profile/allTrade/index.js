@@ -93,7 +93,6 @@ class AllTrade extends Component {
             tradeId: tradeId,
             trackingNum: trackingNum
         }
-        console.error("trackingNum：" + !trackingNum);
         if (!trackingNum) {
             message.error("请输入快递单号");
             return;

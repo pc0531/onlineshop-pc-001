@@ -13,7 +13,6 @@ import { connect } from "react-redux"
 class Profile extends React.Component {
     render() {
         const { userId } = this.props;
-        console.error("userName:" + userId)
         return (
             <div className='profile'>
                 <div className='profileContent'>

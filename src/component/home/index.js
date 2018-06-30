@@ -88,8 +88,8 @@ class Home extends Component {
                             recommendList && recommendList.length > 0 ?
                                 recommendList.map((ele, index) => {
                                     return (
-                                        <Link to={{ ...router, state: ele }}>
-                                            <li key={index}>
+                                        <Link to={{ ...router, state: ele }} key={index}>
+                                            <li >
                                                 <h3>{ele.goodsName}</h3>
                                                 <img src={ele.goodsPicUrl} />
                                                 <p>价格：<span>￥{ele.goodsPrice}</span></p>

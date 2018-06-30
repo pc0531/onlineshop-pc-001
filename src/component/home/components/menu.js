@@ -39,20 +39,20 @@ export default class Menu extends Component {
             <div className='menu'>
                 {
                     initMenu.map((ele, index) => (
-                        <Link to='/course'>
-                            <div className={`menuDetail` + ` ` + `${activeId === ele.id ? `menuDetailActive` : ``}`}
-                                key={ele + index}
-                                onMouseOver={() => {
-                                    this.setState({ activeId: ele.id })
-                                    this.props.onMouseOver(ele.id);
-                                }}
-                            >
-                                <a>
-                                    <span>{ele.title}</span>
-                                    <i></i>
-                                </a>
-                            </div>
-                        </Link>
+
+                        <div className={`menuDetail` + ` ` + `${activeId === ele.id ? `menuDetailActive` : ``}`}
+                            key={ele + index}
+                            onMouseOver={() => {
+                                this.setState({ activeId: ele.id })
+                                this.props.onMouseOver(ele.id);
+                            }}
+                        >
+                            <a>
+                                <span>{ele.title}</span>
+                                <i></i>
+                            </a>
+                        </div>
+
                     ))
                 }
 

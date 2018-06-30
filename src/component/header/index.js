@@ -59,7 +59,6 @@ class Header extends Component {
         let keyValue = this.state.keyValue;
         let currentUrl = window.location.href;
         let a = currentUrl.indexOf("search");
-        console.error("phoneNum:" + phoneNum);
         return (
             <header>
                 <div className="headerTop">
@@ -105,8 +104,6 @@ class Header extends Component {
                                                     } else {
                                                         message.error("请输入关键字！")
                                                     }
-                                                    // store.dispatch({type:'search-changeSearchContent',data:keyValue})
-                                                    // console.error("content:"+keyValue);
                                                 }}
                                             >
                                             </i>

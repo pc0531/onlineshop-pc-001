@@ -29,11 +29,9 @@ export const signIn = (param, subcb) => dispatch => {
 }
 
 export const sync = () =>  dispatch => {
-	console.log('sync f:', cookieKey, getCookie(cookieKey))
     const phoneNum = JSON.parse(getCookie(cookieKey) || null)
 	post('/user/checkLogin',{}).then(res => {
 		if (!!res) {
-            console.error("res:"+res);
             dispatch({
                 type: `signInSuccess`,
                 data: res

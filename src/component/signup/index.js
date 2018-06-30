@@ -29,13 +29,11 @@ class SignUp extends React.Component {
     siginUpHander = () => {
         const { validateFields, getFieldValue, getFieldsValue } = this.props.form;
         const { signUp,code } = this.props;
-        console.error("code:"+code);
         validateFields((err) => {
             if (err) {
                 return
             }
             const formatData = getFieldsValue()
-            console.error("formatData:"+JSON.stringify(formatData));
             signUp(formatData, () => {
                 this.gotoPage("/signin")
             })

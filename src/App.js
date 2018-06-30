@@ -18,7 +18,6 @@ class App extends Component {
       window.scrollTo(0, 0) // 切换页面的时候 滚动到头部
     }
     window.__routerHistory = h
-    console.error("location:"+h);
     return h
   }
 

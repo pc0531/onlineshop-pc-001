@@ -33,8 +33,6 @@ export const addTrade = (callback) => (dispatch, getState) => {
     post('/trade/insertTrade', formatData).then((res) => {
         if (res) {
             dispatch({ type: `${profix}-changetradeId`, data: res.id })
-            //callback()
-            console.error("res:" + res)
         }
     }).catch((err) => {
         if (err) {

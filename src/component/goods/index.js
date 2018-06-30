@@ -3,8 +3,14 @@ import { Button, message } from 'antd'
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import * as actions from './modules/action'
+import PropTypes from 'prop-types'
 
 class Goods extends Component {
+    static contextTypes = {
+        router: PropTypes.object
+    }
+
+   
     state = {
         num: 1
     }
@@ -14,12 +20,16 @@ class Goods extends Component {
         getRecommendList();
     }
 
+    gotoPage = (args, event) => {
+        const { history } = this.context.router
+        history.push(args)
+    }
+
 
     render() {
         let num = this.state.num;
         let detail = this.props.location.state;
         const { addToShoppingCard, recommendList } = this.props;
-        console.error("detail:" + JSON.stringify(detail));
         return (
             <div className="goods">
                 <div className="goods-detail">
@@ -31,6 +41,11 @@ class Goods extends Component {
                             </div>
                             <div className="goods-info">
                                 <h2>{detail.goodsName}</h2>
+                                <h4>{detail.goodsDescription}</h4>
+                                <div className="goods-send">
+                                    <span>配送：</span>
+                                    <span style = {{paddingLeft:'20px'}}>限时包邮</span>
+                                </div>
                                 <div className="goods-price">
                                     <span>价格：</span>
                                     <span>{"￥" + detail.goodsPrice}</span>
@@ -64,7 +79,12 @@ class Goods extends Component {
                                     <span style={{ marginLeft: '15px', fontSize: '15px' }}>库存:（{detail.goodsNum}）</span>
                                 </div>
                                 <div className="goods-buy">
-                                    <button>立即购买</button>
+                                    <button
+                                        onClick={() => {
+                                            addToShoppingCard(detail, num)
+                                            this.gotoPage("/shoppingCard")
+                                        }}
+                                    >立即购买</button>
                                     <button onClick={() => {
                                         message.success("添加成功!");
                                         addToShoppingCard(detail, num)
@@ -78,20 +98,20 @@ class Goods extends Component {
                     <div className="goods-show-content">
                         <div className="goods-show-recom">
                             <div className="goods-recom-content">
-                                <div className = "goods-recom-title"><span>猜您喜欢</span></div>
+                                <div className="goods-recom-title"><span>猜您喜欢</span></div>
                                 <ul>
                                     {
                                         recommendList && recommendList.length > 0 ?
                                             recommendList.map((ele) => {
                                                 return (
                                                     <li>
-                                                        <img src={ele.goodsPicUrl}/>
+                                                        <img src={ele.goodsPicUrl} />
                                                         <p>{ele.goodsName}</p>
                                                         <h4>价格：<span>￥{ele.goodsPrice}</span></h4>
                                                         <button
                                                             onClick={() => {
                                                                 message.success("添加成功!");
-                                                                addToShoppingCard(ele,1)
+                                                                addToShoppingCard(ele, 1)
                                                             }}
                                                         >加入购物车
                                                         </button>

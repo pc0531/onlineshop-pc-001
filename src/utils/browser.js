@@ -12,16 +12,12 @@ export const userCookieKey = 'uinfo'
 export function getCookie(cname) {
     const name = cname + "=";
     const cookie = window.document.cookie;
-    console.error("window.document.cookie："+cookie);
     const ca = window.document.cookie.split(';');
-    console.error("ca："+ca);
     for(var i=0; i<ca.length; i++)
     {
         var c = ca[i].trim();
-        console.error("c:"+c);
         if (c.indexOf(name)==0) {
             let sub = c.substring(name.length,c.length);
-            console.error("sub:"+sub);
             return sub;
         }
         

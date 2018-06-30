@@ -109,7 +109,6 @@ class MyTrade extends Component {
                 render: (text) => (
                     <p style={{ margin: '0' }}>
                         <a onClick={() => {
-                            console.error(text.msg)
                             queryAddress(text.addressId, text.id, () => {
                                 this.setState(
                                     {
